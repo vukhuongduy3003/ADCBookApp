@@ -46,74 +46,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEditBillFrm.cs">
+    <Compile Include="AddEditCompanyFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEditBillFrm.designer.cs">
-      <DependentUpon>AddEditBillFrm.cs</DependentUpon>
+    <Compile Include="AddEditCompanyFrm.designer.cs">
+      <DependentUpon>AddEditCompanyFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddEditCustomerFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddEditCustomerFrm.designer.cs">
-      <DependentUpon>AddEditCustomerFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddEditDiscountFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddEditDiscountFrm.designer.cs">
-      <DependentUpon>AddEditDiscountFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddEditItemFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddEditItemFrm.designer.cs">
-      <DependentUpon>AddEditItemFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Bill.cs" />
-    <Compile Include="BillDetail.cs" />
-    <Compile Include="Cart.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="Discount.cs" />
-    <Compile Include="FullName.cs" />
+    <Compile Include="Author.cs" />
+    <Compile Include="Company.cs" />
     <Compile Include="HomeFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HomeFrm.designer.cs">
       <DependentUpon>HomeFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvalidItemNameException.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="PaymentFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PaymentFrm.designer.cs">
-      <DependentUpon>PaymentFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Person.cs" />
+    <Compile Include="InvalidEmailException.cs" />
+    <Compile Include="InvalidCompanyNameException.cs" />
+    <Compile Include="InvalidNameException.cs" />
+    <Compile Include="InvalidPhoneNumberException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectedItem.cs" />
-    <Compile Include="StatCustomer.cs" />
-    <Compile Include="StatModel.cs" />
-    <Compile Include="StatRevenue.cs" />
-    <EmbeddedResource Include="AddEditBillFrm.resx">
-      <DependentUpon>AddEditBillFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddEditCustomerFrm.resx">
-      <DependentUpon>AddEditCustomerFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddEditDiscountFrm.resx">
-      <DependentUpon>AddEditDiscountFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddEditItemFrm.resx">
-      <DependentUpon>AddEditItemFrm.cs</DependentUpon>
+    <EmbeddedResource Include="AddEditCompanyFrm.resx">
+      <DependentUpon>AddEditCompanyFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeFrm.resx">
       <DependentUpon>HomeFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PaymentFrm.resx">
-      <DependentUpon>PaymentFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

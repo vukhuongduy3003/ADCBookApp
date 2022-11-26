@@ -1,21 +1,41 @@
-CREATE TABLE Item (
-	idItem INT PRIMARY KEY IDENTITY,
-	nameItem NVARCHAR(100) NOT NULL,
-	typeItem NVARCHAR(100) NOT NULL,
-	quantityItem INT NOT NULL,
-	brandItem NVARCHAR(100) NOT NULL,
-	releaseDateItem DATE NOT NULL,
-	priceItem INT NOT NULL
+CREATE TABLE Company (
+	idCompany INT PRIMARY KEY IDENTITY,
+	nameCompany NVARCHAR(100) NOT NULL,
+	addressCompany NVARCHAR(255) NOT NULL,
+	phoneNumber NVARCHAR(10) NOT NULL
 );
 
-CREATE TABLE Discount (
-	idDiscount INT PRIMARY KEY IDENTITY,
-	nameDiscount NVARCHAR(100) NOT NULL,
-	startTimeDiscount DATE NOT NULL,
-	endTimeDiscount DATE NOT NULL,
-	typeDiscount NVARCHAR(100) NOT NULL,
-	priceAmountDiscount INT NOT NULL,
-	percentDiscount INT NOT NULL
+SELECT *
+FROM Company
+ORDER BY Company.nameCompany ASC;
+
+SELECT *
+FROM Company
+WHERE Company.idCompany = 85;
+
+CREATE TABLE Author (
+	idAuthor INT PRIMARY KEY IDENTITY,
+	nameAuthor NVARCHAR(100) NOT NULL,
+	birthday DATE NOT NULL,
+	homeTown NVARCHAR(100) NOT NULL
 );
 
-INSERT INTO Item (nameItem, typeItem, quantityItem, brandItem, releaseDateItem, priceItem) VALUES (N'Vu', N'Khuong', 3, N'Duy', '2002-03-30', 4000);
+CREATE TABLE [Type] (
+	idType INT PRIMARY KEY IDENTITY,
+	nameType NVARCHAR(100) NOT NULL,
+);
+
+CREATE TABLE Book (
+	idBook INT PRIMARY KEY IDENTITY,
+	nameBook NVARCHAR(100) NOT NULL,
+	idCompany INT NOT NULL,
+	FOREIGN KEY(idCompany) REFERENCES Company(idCompany),
+	idAuthor INT NOT NULL,
+	FOREIGN KEY(idAuthor) REFERENCES Author(idAuthor),
+	idType INT NOT NULL,
+	FOREIGN KEY(idType) REFERENCES [Type](idType),
+	amount INT NOT NULL,
+	price INT NOT NULL,
+);
+
+
