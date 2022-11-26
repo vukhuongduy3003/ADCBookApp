@@ -26,3 +26,4 @@ C:\Users\vukhu\Downloads\Do_an_1\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.cspr
 C:\Users\vukhu\Downloads\Do_an_1\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.exe
 C:\Users\vukhu\Downloads\Do_an_1\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.pdb
 C:\Users\vukhu\Downloads\Do_an_1\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.AddEditCompanyFrm.resources
+C:\Users\vukhu\Downloads\Do_an_1\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.AddEditAuthorFrm.resources

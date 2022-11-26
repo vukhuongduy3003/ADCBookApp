@@ -10,25 +10,25 @@ namespace ADCBookApp
     {
         public int authorId { get; set; }
         public string authorName { get; set; }
-        public DateTime birstDay { get; set; }
+        public int birstYear { get; set; }
         public string homeTown { get; set; }
 
         public Author()
         {
         }
 
-        public Author(int authorId, string authorName, DateTime birstDay, string homeTown)
+        public Author(int authorId, string authorName, int birstYear, string homeTown)
         {
             this.authorId = authorId;
             this.authorName = authorName;
-            this.birstDay = birstDay;
+            this.birstYear = birstYear;
             this.homeTown = homeTown;
         }
 
-        public Author(string authorName, DateTime birstDay, string homeTown)
+        public Author(string authorName, int birstYear, string homeTown)
         {
             this.authorName = authorName;
-            this.birstDay = birstDay;
+            this.birstYear = birstYear;
             this.homeTown = homeTown;
         }
     }

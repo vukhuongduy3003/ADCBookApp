@@ -156,7 +156,7 @@
             this.btnSearchItem = new System.Windows.Forms.Button();
             this.numericItemFrom = new System.Windows.Forms.NumericUpDown();
             this.numericItemTo = new System.Windows.Forms.NumericUpDown();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControlCategory = new System.Windows.Forms.TabControl();
             this.tabNXB = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -180,13 +180,13 @@
             this.tabAuthor = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSearchAuthor = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboSeachAuthor = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.sortNameAuthorDESC = new System.Windows.Forms.RadioButton();
+            this.sortNameAuthorASC = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -195,8 +195,8 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tblAuthorEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tblAuthorRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabCategory = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -255,7 +255,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudStat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemTo)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tabControlCategory.SuspendLayout();
             this.tabNXB.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1243,19 +1243,20 @@
             this.numericItemTo.Size = new System.Drawing.Size(78, 22);
             this.numericItemTo.TabIndex = 8;
             // 
-            // tabControl1
+            // tabControlCategory
             // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControl1.Controls.Add(this.tabNXB);
-            this.tabControl1.Controls.Add(this.tabAuthor);
-            this.tabControl1.Controls.Add(this.tabCategory);
-            this.tabControl1.Controls.Add(this.tabBookStore);
-            this.tabControl1.Controls.Add(this.tabLie);
-            this.tabControl1.Location = new System.Drawing.Point(2, 27);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1100, 662);
-            this.tabControl1.TabIndex = 2;
+            this.tabControlCategory.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControlCategory.Controls.Add(this.tabNXB);
+            this.tabControlCategory.Controls.Add(this.tabAuthor);
+            this.tabControlCategory.Controls.Add(this.tabCategory);
+            this.tabControlCategory.Controls.Add(this.tabBookStore);
+            this.tabControlCategory.Controls.Add(this.tabLie);
+            this.tabControlCategory.Location = new System.Drawing.Point(2, 27);
+            this.tabControlCategory.Name = "tabControlCategory";
+            this.tabControlCategory.SelectedIndex = 0;
+            this.tabControlCategory.Size = new System.Drawing.Size(1100, 662);
+            this.tabControlCategory.TabIndex = 2;
+            this.tabControlCategory.Click += new System.EventHandler(this.tabControlCategoryClick);
             // 
             // tabNXB
             // 
@@ -1498,10 +1499,10 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.txtSearchAuthor);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.label18);
-            this.groupBox4.Controls.Add(this.comboBox2);
+            this.groupBox4.Controls.Add(this.comboSeachAuthor);
             this.groupBox4.Location = new System.Drawing.Point(765, 427);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(321, 209);
@@ -1518,13 +1519,14 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Tìm kiếm";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.BtnSearchAuthorClick);
             // 
-            // textBox2
+            // txtSearchAuthor
             // 
-            this.textBox2.Location = new System.Drawing.Point(96, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 26);
-            this.textBox2.TabIndex = 5;
+            this.txtSearchAuthor.Location = new System.Drawing.Point(96, 84);
+            this.txtSearchAuthor.Name = "txtSearchAuthor";
+            this.txtSearchAuthor.Size = new System.Drawing.Size(203, 26);
+            this.txtSearchAuthor.TabIndex = 5;
             // 
             // label17
             // 
@@ -1544,21 +1546,21 @@
             this.label18.TabIndex = 1;
             this.label18.Text = "Tiêu chí:";
             // 
-            // comboBox2
+            // comboSeachAuthor
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboSeachAuthor.FormattingEnabled = true;
+            this.comboSeachAuthor.Items.AddRange(new object[] {
             "Mã tác giả",
             "Tên tác giả"});
-            this.comboBox2.Location = new System.Drawing.Point(96, 41);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(203, 28);
-            this.comboBox2.TabIndex = 0;
+            this.comboSeachAuthor.Location = new System.Drawing.Point(96, 41);
+            this.comboSeachAuthor.Name = "comboSeachAuthor";
+            this.comboSeachAuthor.Size = new System.Drawing.Size(203, 28);
+            this.comboSeachAuthor.TabIndex = 0;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.radioButton7);
-            this.groupBox5.Controls.Add(this.radioButton10);
+            this.groupBox5.Controls.Add(this.sortNameAuthorDESC);
+            this.groupBox5.Controls.Add(this.sortNameAuthorASC);
             this.groupBox5.Location = new System.Drawing.Point(350, 427);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(409, 209);
@@ -1566,27 +1568,29 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sắp xếp theo";
             // 
-            // radioButton7
+            // sortNameAuthorDESC
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(217, 45);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(159, 24);
-            this.radioButton7.TabIndex = 3;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Tên TG giảm dần";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.sortNameAuthorDESC.AutoSize = true;
+            this.sortNameAuthorDESC.Location = new System.Drawing.Point(217, 45);
+            this.sortNameAuthorDESC.Name = "sortNameAuthorDESC";
+            this.sortNameAuthorDESC.Size = new System.Drawing.Size(159, 24);
+            this.sortNameAuthorDESC.TabIndex = 3;
+            this.sortNameAuthorDESC.TabStop = true;
+            this.sortNameAuthorDESC.Text = "Tên TG giảm dần";
+            this.sortNameAuthorDESC.UseVisualStyleBackColor = true;
+            this.sortNameAuthorDESC.CheckedChanged += new System.EventHandler(this.SortAuthor);
             // 
-            // radioButton10
+            // sortNameAuthorASC
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(19, 45);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(155, 24);
-            this.radioButton10.TabIndex = 0;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Tên TG tăng dần";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.sortNameAuthorASC.AutoSize = true;
+            this.sortNameAuthorASC.Location = new System.Drawing.Point(19, 45);
+            this.sortNameAuthorASC.Name = "sortNameAuthorASC";
+            this.sortNameAuthorASC.Size = new System.Drawing.Size(155, 24);
+            this.sortNameAuthorASC.TabIndex = 0;
+            this.sortNameAuthorASC.TabStop = true;
+            this.sortNameAuthorASC.Text = "Tên TG tăng dần";
+            this.sortNameAuthorASC.UseVisualStyleBackColor = true;
+            this.sortNameAuthorASC.CheckedChanged += new System.EventHandler(this.SortAuthor);
             // 
             // groupBox6
             // 
@@ -1608,7 +1612,6 @@
             this.button5.TabIndex = 1;
             this.button5.Text = "Làm mới";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.RefeshAuthor);
             // 
             // button6
             // 
@@ -1619,6 +1622,7 @@
             this.button6.TabIndex = 0;
             this.button6.Text = "Thêm mới";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.BtnAddNewAuthorClick);
             // 
             // tblAuthor
             // 
@@ -1640,13 +1644,14 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
-            this.dataGridViewButtonColumn3,
-            this.dataGridViewButtonColumn4});
+            this.tblAuthorEdit,
+            this.tblAuthorRemove});
             this.tblAuthor.Location = new System.Drawing.Point(7, 6);
             this.tblAuthor.Name = "tblAuthor";
             this.tblAuthor.RowHeadersWidth = 51;
             this.tblAuthor.Size = new System.Drawing.Size(1079, 415);
             this.tblAuthor.TabIndex = 3;
+            this.tblAuthor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblAuthorCellContentClick);
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -1680,21 +1685,21 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewButtonColumn3
+            // tblAuthorEdit
             // 
-            this.dataGridViewButtonColumn3.HeaderText = "Sửa";
-            this.dataGridViewButtonColumn3.MinimumWidth = 6;
-            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-            this.dataGridViewButtonColumn3.Text = "Sửa";
-            this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+            this.tblAuthorEdit.HeaderText = "Sửa";
+            this.tblAuthorEdit.MinimumWidth = 6;
+            this.tblAuthorEdit.Name = "tblAuthorEdit";
+            this.tblAuthorEdit.Text = "Sửa";
+            this.tblAuthorEdit.UseColumnTextForButtonValue = true;
             // 
-            // dataGridViewButtonColumn4
+            // tblAuthorRemove
             // 
-            this.dataGridViewButtonColumn4.HeaderText = "Xóa";
-            this.dataGridViewButtonColumn4.MinimumWidth = 6;
-            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-            this.dataGridViewButtonColumn4.Text = "Xóa";
-            this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
+            this.tblAuthorRemove.HeaderText = "Xóa";
+            this.tblAuthorRemove.MinimumWidth = 6;
+            this.tblAuthorRemove.Name = "tblAuthorRemove";
+            this.tblAuthorRemove.Text = "Xóa";
+            this.tblAuthorRemove.UseColumnTextForButtonValue = true;
             // 
             // tabCategory
             // 
@@ -2258,7 +2263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1104, 704);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlCategory);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -2275,7 +2280,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudStat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemTo)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControlCategory.ResumeLayout(false);
             this.tabNXB.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -2415,7 +2420,7 @@
         private System.Windows.Forms.Button btnSearchItem;
         private System.Windows.Forms.NumericUpDown numericItemFrom;
         private System.Windows.Forms.NumericUpDown numericItemTo;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControlCategory;
         private System.Windows.Forms.TabPage tabNXB;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
@@ -2433,10 +2438,10 @@
         private System.Windows.Forms.TabPage tabAuthor;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSearchAuthor;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboSeachAuthor;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -2449,8 +2454,8 @@
         private System.Windows.Forms.DataGridView tblStat;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton sortNameAuthorDESC;
+        private System.Windows.Forms.RadioButton sortNameAuthorASC;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox3;
@@ -2498,18 +2503,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column44;
         private System.Windows.Forms.DataGridViewButtonColumn Column42;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyId;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumber;
         private System.Windows.Forms.DataGridViewButtonColumn tblCompanyEdit;
         private System.Windows.Forms.DataGridViewButtonColumn tblCompanyRemove;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewButtonColumn tblAuthorEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn tblAuthorRemove;
     }
 }
 

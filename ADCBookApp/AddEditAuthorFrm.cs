@@ -4,15 +4,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ADCBookApp
 {
-    public partial class AddEditCompanyFrm : Form
+    public partial class AddEditAuthorFrm : Form
     {
         SqlConnection connection;
         SqlCommand command;
@@ -20,81 +20,81 @@ namespace ADCBookApp
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
-        private Company company;
+        private Author author;
 
-        public AddEditCompanyFrm()
+        public AddEditAuthorFrm()
         {
             InitializeComponent();
             CenterToParent();
         }
 
-        public AddEditCompanyFrm(Company _company=null) : this()
+        public AddEditAuthorFrm(Author _author = null) : this()
         {
-            if (_company != null)
+            if (_author != null)
             {
-                Text = "CẬP NHẬT THÔNG TIN NXB";
-                btnAddNew.Text = "Cập nhật";
-                company = _company;
-                ShowCompanyData();
+                Text = "CẬP NHẬT THÔNG TIN TÁC GIẢ";
+                btnAddNewAuthor.Text = "Cập nhật";
+                author = _author;
+                ShowAuthorData();
             }
         }
 
-        private void ShowCompanyData()
+        private void ShowAuthorData()
         {
-            txtId.Text = $"{company.companyId}";
-            txtCompanyName.Text = company.companyName;
-            txtAddress.Text = company.address;
-            txtPhoneNumber.Text = company.phoneNumber;
+            txtIdAuthor.Text = $"{author.authorId}";
+            txtAuthorName.Text = author.authorName;
+            birstYearAuthor.Value = DateTime.ParseExact(author.birstYear.ToString(), "yyyy", CultureInfo.InvariantCulture);
+            txtHomeTown.Text = author.homeTown;
         }
 
-        private void BtnAddCompanyClick(object sender, EventArgs e)
+        private void BtnAddAuthorClick(object sender, EventArgs e)
         {
-            var companyId = int.Parse(txtId.Text);
-            var companyName = txtCompanyName.Text;
-            var address = txtAddress.Text;
-            var phoneNumber = txtPhoneNumber.Text;
+            var authorId = int.Parse(txtIdAuthor.Text);
+            var authorName = txtAuthorName.Text;
+            var authorBirstYear = birstYearAuthor.Text;
+            var authorHomeTown = txtHomeTown.Text;
             try
             {
-                if (string.IsNullOrEmpty(companyName))
+                if (string.IsNullOrEmpty(authorName))
                 {
-                    var msg = "Tên nhà xuất bản không được để trống.";
+                    var msg = "Tên tác giả không được để trống.";
                     throw new InvalidCompanyNameException(msg);
                 }
-                if (string.IsNullOrEmpty(address))
+                if (string.IsNullOrEmpty(authorBirstYear))
                 {
-                    var msg = "Địa chỉ nhà xuất bản không được để trống.";
+                    var msg = "Năm sinh tác giả không được để trống.";
                     throw new InvalidCompanyNameException(msg);
                 }
-                if (string.IsNullOrEmpty(phoneNumber))
+                if (string.IsNullOrEmpty(authorHomeTown))
                 {
-                    var msg = "Số điện thoại nhà xuất bản không được để trống.";
+                    var msg = "Quê quán tác giả không được để trống.";
                     throw new InvalidCompanyNameException(msg);
                 }
-                if (btnAddNew.Text.CompareTo("Cập nhật") == 0)
+                if (btnAddNewAuthor.Text.CompareTo("Cập nhật") == 0)
                 {
-                    company.companyId = companyId;
-                    company.companyName = companyName;
-                    company.address = address;
-                    company.phoneNumber = phoneNumber;
+                    author.authorId = authorId;
+                    author.authorName = authorName;
+                    author.birstYear = Int32.Parse(authorBirstYear);
+                    author.homeTown = authorHomeTown;
                     var msg = "Bạn có chắc chắn muốn lưu lại các thay đổi?";
                     var title = "Xác nhận cập nhật";
                     var ans = ShowConfirmMessage(title, msg);
                     if (ans == DialogResult.Yes)
                     {
-                        HomeFrm.hform.UpdateCompany(company);
+                        HomeFrm.hform.UpdateAuthor(author);
                         Dispose();
                     }
                 }
                 else // thêm mới NXB
                 {
-                    //company = new Company(companyName, address, phoneNumber);
+                    //author = new Author(authorName, Int32.Parse(authorBirstYear), authorHomeTown);
                     connection = new SqlConnection(str);
                     connection.Open();
                     command = connection.CreateCommand();
-                    command.CommandText = $"INSERT INTO Company (nameCompany, addressCompany, phoneNumber)" +
-                        $"VALUES (N'" + txtCompanyName.Text + "', N'" + txtAddress.Text + "', N'" + txtPhoneNumber.Text + "');";
+                    command.CommandText = $"INSERT INTO Author (nameAuthor, birthYear, homeTown)" +
+                        $"VALUES (N'" + authorName + "', N'" + authorBirstYear + "', N'" + authorHomeTown + "');";
                     command.ExecuteNonQuery();
-                    HomeFrm.hform.ShowCompany();
+                    HomeFrm.hform.ShowAuthor();
                 }
                 this.Close();
             }
@@ -109,7 +109,7 @@ namespace ADCBookApp
             var title = "Xác nhận";
             var message = "Bạn có chắc muốn hủy bỏ?";
             var ans = ShowConfirmMessage(title, message);
-            if(ans == DialogResult.Yes)
+            if (ans == DialogResult.Yes)
             {
                 Dispose();
             }

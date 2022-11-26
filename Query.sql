@@ -16,7 +16,7 @@ WHERE Company.idCompany = 85;
 CREATE TABLE Author (
 	idAuthor INT PRIMARY KEY IDENTITY,
 	nameAuthor NVARCHAR(100) NOT NULL,
-	birthday DATE NOT NULL,
+	birthYear INT NOT NULL,
 	homeTown NVARCHAR(100) NOT NULL
 );
 
@@ -37,5 +37,3 @@ CREATE TABLE Book (
 	amount INT NOT NULL,
 	price INT NOT NULL,
 );
-
-
