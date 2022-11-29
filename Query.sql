@@ -1,17 +1,11 @@
+CREATE DATABASE DataADCBook;
+USE DataADCBook;
 CREATE TABLE Company (
 	idCompany INT PRIMARY KEY IDENTITY,
 	nameCompany NVARCHAR(100) NOT NULL,
 	addressCompany NVARCHAR(255) NOT NULL,
 	phoneNumber NVARCHAR(10) NOT NULL
 );
-
-SELECT *
-FROM Company
-ORDER BY Company.nameCompany ASC;
-
-SELECT *
-FROM Company
-WHERE Company.idCompany = 85;
 
 CREATE TABLE Author (
 	idAuthor INT PRIMARY KEY IDENTITY,
@@ -25,15 +19,71 @@ CREATE TABLE [Type] (
 	nameType NVARCHAR(100) NOT NULL,
 );
 
+CREATE TABLE ExchangeBook (
+	IdExchangeBook INT PRIMARY KEY IDENTITY,
+	nameBook NVARCHAR(100) NOT NULL,
+	reason NVARCHAR(100) NOT NULL,
+	[status] NVARCHAR(100) NOT NULL,
+	startDay DATETIME NOT NULL,
+	endDay DATETIME NOT NULL
+);
+
+CREATE TABLE Discount (
+	idDiscount INT PRIMARY KEY IDENTITY,
+	nameDiscount NVARCHAR(100) NOT NULL,
+	StartDiscountDate DATE NOT NULL,
+	EndDiscountDate DATE NOT NULL
+)
+
+CREATE TABLE Custommer (
+	idCustommer INT PRIMARY KEY IDENTITY,
+	nameCustommer NVARCHAR(100) NOT NULL,
+	BirstDay DATE NOT NULL,
+	[Address] NVARCHAR(100) NOT NULL,
+	phoneNumber NVARCHAR(100) NOT NULL,
+	Email VARCHAR(100) NOT NULL,
+	CreateAccount DATE NOT NULL
+)
+
 CREATE TABLE Book (
 	idBook INT PRIMARY KEY IDENTITY,
 	nameBook NVARCHAR(100) NOT NULL,
-	idCompany INT NOT NULL,
-	FOREIGN KEY(idCompany) REFERENCES Company(idCompany),
-	idAuthor INT NOT NULL,
-	FOREIGN KEY(idAuthor) REFERENCES Author(idAuthor),
-	idType INT NOT NULL,
-	FOREIGN KEY(idType) REFERENCES [Type](idType),
-	amount INT NOT NULL,
-	price INT NOT NULL,
+	Company_idCompany INT NOT NULL,
+	Author_idAuthor INT NOT NULL,
+	Type_idType INT NOT NULL,
+	number INT NOT NULL,
+	price FLOAT NOT NULL,
+	FOREIGN KEY (Author_idAuthor)
+    REFERENCES Author (idAuthor),
+	FOREIGN KEY (Company_idCompany)
+    REFERENCES Company (idCompany),
+	FOREIGN KEY (Type_idType)
+    REFERENCES [Type] (idType)
 );
+
+CREATE TABLE Bill (
+	idBill INT PRIMARY KEY IDENTITY,
+	nameInvoice NVARCHAR(100) NOT NULL,
+	Custommer_idCustommer INT NOT NULL,
+	Discount_idDiscount INT NOT NULL,
+	PayTotal FLOAT NOT NULL,
+	PayAfterDiscount FLOAT NOT NULL,
+	CreateDate DATETIME NOT NULL,
+	Book_idBook INT NOT NULL,
+	FOREIGN KEY (Discount_idDiscount)
+	REFERENCES Discount (idDiscount),
+	FOREIGN KEY (Custommer_idCustommer)
+	REFERENCES Custommer (idCustommer),
+	FOREIGN KEY (Book_idBook)
+    REFERENCES Book (idBook)
+)
+
+
+CREATE TABLE [Order] (
+	idOrder INT PRIMARY KEY IDENTITY,
+	nameOrder VARCHAR(100) NOT NULL,
+	CreateDateOrder DATETIME NOT NULL,
+	BillTotal FLOAT NOT NULL,
+	StatusOrder VARCHAR(100) NOT NULL,
+	BillDate DATETIME NULL
+)

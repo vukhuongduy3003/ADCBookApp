@@ -17,10 +17,10 @@ namespace ADCBookApp
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
         public static HomeFrm hform;
-        private List<Company> companies;
-        private List<Company> companiesSearched;
-        private List<Author> authors;
-        private List<Author> authorsSearched;
+        public List<Company> companies;
+        public List<Author> authors;
+        public List<Type> types;
+        public List<Book> books;
         public HomeFrm()
         {
             InitializeComponent();
@@ -54,6 +54,33 @@ namespace ADCBookApp
             }
         }
 
+        public static void ConvertDataTableType(List<Type> typeList, DataTable table)
+        {
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                Type type = new Type();
+                type.idType = Convert.ToInt32(table.Rows[i]["idType"]);
+                type.nameType = table.Rows[i]["nameType"].ToString();
+                typeList.Add(type);
+            }
+        }
+
+        public static void ConvertDataTableBook(List<Book> bookList, DataTable table)
+        {
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                Book book = new Book();
+                book.idBook = Convert.ToInt32(table.Rows[i]["idBook"]);
+                book.nameBook = table.Rows[i]["nameBook"].ToString();
+                book.nameCompany = table.Rows[i]["nameCompany"].ToString();
+                book.nameType = table.Rows[i]["nameType"].ToString();
+                book.nameAuthor = table.Rows[i]["nameAuthor"].ToString();
+                book.number = Convert.ToInt32(table.Rows[i]["number"]);
+                book.price = Convert.ToInt32(table.Rows[i]["price"]);
+                bookList.Add(book);
+            }
+        }
+
         public void ShowCompany()
         {
             connection = new SqlConnection(str);
@@ -76,6 +103,29 @@ namespace ADCBookApp
             connection.Close();
         }
 
+        public List<Company> getCompany()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM Company";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            companies = new List<Company>();
+            tblCompany.Rows.Clear();
+            ConvertDataTable(companies, table);
+            foreach (Company i in companies)
+            {
+                tblCompany.Rows.Add(new object[]
+                {
+                        i.companyId, i.companyName, i.address, i.phoneNumber
+                });
+            }
+            connection.Close();
+            return companies;
+        }
+
         public void ShowAuthor()
         {
             connection = new SqlConnection(str);
@@ -95,6 +145,100 @@ namespace ADCBookApp
                         i.authorId, i.authorName, i.birstYear, i.homeTown
                 });
             }
+        }
+
+        public List<Author> getAuthor()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM Author";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            authors = new List<Author>();
+            tblAuthor.Rows.Clear();
+            ConvertDataTableAuthor(authors, table);
+            foreach (Author i in authors)
+            {
+                tblAuthor.Rows.Add(new object[]
+                {
+                        i.authorId, i.authorName, i.birstYear, i.homeTown
+                });
+            }
+            return authors;
+        }
+
+        public void ShowType()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM Type";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            types = new List<Type>();
+            tblType.Rows.Clear();
+            ConvertDataTableType(types, table);
+            foreach (Type i in types)
+            {
+                tblType.Rows.Add(new object[]
+                {
+                        i.idType, i.nameType
+                });
+            }
+        }
+
+        public List<Type> getType()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM Type";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            types = new List<Type>();
+            tblType.Rows.Clear();
+            ConvertDataTableType(types, table);
+            foreach (Type i in types)
+            {
+                tblType.Rows.Add(new object[]
+                {
+                        i.idType, i.nameType
+                });
+            }
+            return types;
+        }
+
+        public void ShowBook()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM Book, Company, Type, Author WHERE Book.Company_idCompany = Company.idCompany AND Book.Author_idAuthor = Author.idAuthor AND Book.Type_idType = Type.idType";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            books = new List<Book>();
+            tblBook.Rows.Clear();
+            ConvertDataTableBook(books, table);
+            foreach (Book i in books)
+            {
+                tblBook.Rows.Add(new object[]
+                {
+                        i.idBook, i.nameBook, i.nameType, i.nameCompany, i.nameAuthor, i.number, i.price
+                });
+            }
+        }
+
+        private void HomeFrm_Load(object sender, EventArgs e)
+        {
+            ShowCompany();
+            ShowAuthor();
+            ShowType();
+            ShowBook();
         }
 
         public void UpdateCompany(Company updateCompany)
@@ -135,6 +279,48 @@ namespace ADCBookApp
                 tblAuthor.Rows.Add(new object[]
                 {
                         i.authorId, i.authorName, i.birstYear, i.homeTown
+                });
+            }
+        }
+
+        public void UpdateType(Type updateType)
+        {
+            var newType = updateType as Type;
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "UPDATE Type SET nameType = N'" + newType.nameType + "' WHERE idType = " + newType.idType + "";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            tblType.Rows.Clear();
+            ConvertDataTableType(types, table);
+            foreach (Type i in types)
+            {
+                tblType.Rows.Add(new object[]
+                {
+                        i.idType, i.nameType
+                });
+            }
+        }
+
+        public void UpdateBook(Book updateBook)
+        {
+            var newBook = updateBook as Book;
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "UPDATE Book SET nameBook = N'"+ updateBook.nameBook +"', Company_idCompany = (SELECT idCompany FROM Company WHERE nameCompany = N'"+ updateBook.nameCompany +"'), Author_idAuthor = (SELECT idAuthor FROM Author WHERE nameAuthor = N'"+ updateBook.nameAuthor +"'), Type_idType = (SELECT idType FROM Type WHERE nameType = N'"+ updateBook.nameType +"'), number = "+ updateBook.number + ", price = "+ updateBook.price +" WHERE idBook = "+ updateBook.idBook +";";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            tblBook.Rows.Clear();
+            ConvertDataTableBook(books, table);
+            foreach (Book i in books)
+            {
+                tblBook.Rows.Add(new object[]
+                {
+                        i.idBook, i.nameBook, i.nameType, i.nameCompany, i.nameAuthor, i.number, i.price
                 });
             }
         }
@@ -197,6 +383,64 @@ namespace ADCBookApp
             }
         }
 
+        private void tblTypeCellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblType.Columns["tblTypeEdit"].Index)
+            {
+                Type type = types[e.RowIndex];
+                var updateTypeView = new AddEditTypeFrm(type);
+                updateTypeView.Show();
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex == tblType.Columns["tblTypeRemove"].Index)
+            {
+                Type type = types[e.RowIndex];
+                var title = "Xác nhận xóa";
+                var msg = "Bạn có chắc chắn muốn xóa bản ghi này không?";
+                var ans = ShowConfirmDialog(msg, title);
+                if (ans == DialogResult.Yes)
+                {
+                    connection = new SqlConnection(str);
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = "DELETE FROM Type WHERE idType = " + type.idType + ";";
+                    adapter.SelectCommand = command;
+                    table.Clear();
+                    adapter.Fill(table);
+                    ShowType();
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void tblBookCellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblBook.Columns["tblBookEdit"].Index)
+            {
+                Book book = books[e.RowIndex];
+                var updateBookView = new AddEditBookFrm(book);
+                updateBookView.Show();
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex == tblBook.Columns["tblBookRemove"].Index)
+            {
+                Book book = books[e.RowIndex];
+                var title = "Xác nhận xóa";
+                var msg = "Bạn có chắc chắn muốn xóa bản ghi này không?";
+                var ans = ShowConfirmDialog(msg, title);
+                if (ans == DialogResult.Yes)
+                {
+                    connection = new SqlConnection(str);
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = "DELETE FROM Book WHERE idBook = " + book.idBook + ";";
+                    adapter.SelectCommand = command;
+                    table.Clear();
+                    adapter.Fill(table);
+                    ShowBook();
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
         private DialogResult ShowConfirmDialog(string msg, string title)
         {
             return MessageBox.Show(msg, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -214,33 +458,16 @@ namespace ADCBookApp
             childView.Show();
         }
 
-        private void HomeFrm_Load(object sender, EventArgs e)
+        private void BtnAddNewTypeClick(object sender, EventArgs e)
         {
-            ShowCompany();
+            var childView = new AddEditTypeFrm();
+            childView.Show();
         }
 
-        private void tabControlCategoryClick(object sender, EventArgs e)
+        private void BtnAddNewBookClick(object sender, EventArgs e)
         {
-            if (tabControlCategory.SelectedTab.Text == "NHÀ XUẤT BẢN")
-            {
-                ShowCompany();
-            }
-            else if (tabControlCategory.SelectedTab.Text == "TÁC GIẢ")
-            {
-                ShowAuthor();
-            }
-            else if (tabControlCategory.SelectedTab.Text == "THỂ LOẠI")
-            {
-                //ShowAuthor();
-            }
-            else if (tabControlCategory.SelectedTab.Text == "KHO SÁCH")
-            {
-                //ShowAuthor();
-            }
-            else if (tabControlCategory.SelectedTab.Text == "ĐỔI TRẢ")
-            {
-                //ShowAuthor();
-            }
+            var childView = new AddEditBookFrm();
+            childView.Show();
         }
 
         private void btRefeshCompany(object sender, EventArgs e)
@@ -251,6 +478,16 @@ namespace ADCBookApp
         private void btRefeshAuthor(object sender, EventArgs e)
         {
             ShowAuthor();
+        }
+
+        private void btRefeshType(object sender, EventArgs e)
+        {
+            ShowType();
+        }
+
+        private void btRefeshBook(object sender, EventArgs e)
+        {
+            ShowBook();
         }
 
         private void SortCompany(object sender, EventArgs e)
@@ -344,6 +581,136 @@ namespace ADCBookApp
             connection.Close();
         }
 
+        private void SortType(object sender, EventArgs e)
+        {
+            if (sortNameTypeASC.Equals(sender))
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM Type ORDER BY Type.nameType ASC;";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                types = new List<Type>();
+                tblType.Rows.Clear();
+                ConvertDataTableType(types, table);
+                foreach (Type i in types)
+                {
+                    tblType.Rows.Add(new object[]
+                    {
+                        i.idType, i.nameType
+                    });
+                }
+            }
+            else if (sortNameTypeDESC.Equals(sender))
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM Type ORDER BY Type.nameType DESC;";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                types = new List<Type>();
+                tblType.Rows.Clear();
+                ConvertDataTableType(types, table);
+                foreach (Type i in types)
+                {
+                    tblType.Rows.Add(new object[]
+                    {
+                        i.idType, i.nameType
+                    });
+                }
+            }
+            connection.Close();
+        }
+
+        private void SortBook(object sender, EventArgs e)
+        {
+            if (sortNameBookASC.Equals(sender))
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM Book, Company, [Type], Author WHERE Book.Company_idCompany = Company.idCompany AND Book.Author_idAuthor = Author.idAuthor AND Book.Type_idType = [Type].idType ORDER BY Book.nameBook ASC;";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                books = new List<Book>();
+                tblBook.Rows.Clear();
+                ConvertDataTableBook(books, table);
+                foreach (Book i in books)
+                {
+                    tblBook.Rows.Add(new object[]
+                    {
+                        i.idBook, i.nameBook, i.nameType, i.nameCompany, i.nameAuthor, i.number, i.price
+                    });
+                }
+            }
+            else if (sortNameBookDESC.Equals(sender))
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM Book, Company, [Type], Author WHERE Book.Company_idCompany = Company.idCompany AND Book.Author_idAuthor = Author.idAuthor AND Book.Type_idType = [Type].idType ORDER BY Book.nameBook DESC;";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                books = new List<Book>();
+                tblBook.Rows.Clear();
+                ConvertDataTableBook(books, table);
+                foreach (Book i in books)
+                {
+                    tblBook.Rows.Add(new object[]
+                    {
+                        i.idBook, i.nameBook, i.nameType, i.nameCompany, i.nameAuthor, i.number, i.price
+                    });
+                }
+            }
+            else if (sortTypeBookASC.Equals(sender))
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM Book, Company, [Type], Author WHERE Book.Company_idCompany = Company.idCompany AND Book.Author_idAuthor = Author.idAuthor AND Book.Type_idType = [Type].idType ORDER BY nameType ASC;";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                books = new List<Book>();
+                tblBook.Rows.Clear();
+                ConvertDataTableBook(books, table);
+                foreach (Book i in books)
+                {
+                    tblBook.Rows.Add(new object[]
+                    {
+                        i.idBook, i.nameBook, i.nameType, i.nameCompany, i.nameAuthor, i.number, i.price
+                    });
+                }
+            }
+            else if (sortTypeBookDESC.Equals(sender))
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM Book, Company, [Type], Author WHERE Book.Company_idCompany = Company.idCompany AND Book.Author_idAuthor = Author.idAuthor AND Book.Type_idType = [Type].idType ORDER BY nameType DESC;";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                books = new List<Book>();
+                tblBook.Rows.Clear();
+                ConvertDataTableBook(books, table);
+                foreach (Book i in books)
+                {
+                    tblBook.Rows.Add(new object[]
+                    {
+                        i.idBook, i.nameBook, i.nameType, i.nameCompany, i.nameAuthor, i.number, i.price
+                    });
+                }
+            }
+            connection.Close();
+        }
+
         private void ShowSearchedCompany(List<Company> companies)
         {
             foreach (Company i in companies)
@@ -362,6 +729,28 @@ namespace ADCBookApp
                 tblAuthor.Rows.Add(new object[]
                 {
                         i.authorId, i.authorName, i.birstYear, i.homeTown
+                });
+            }
+        }
+
+        private void ShowSearchedType(List<Type> types)
+        {
+            foreach (Type i in types)
+            {
+                tblType.Rows.Add(new object[]
+                {
+                        i.idType, i.nameType
+                });
+            }
+        }
+
+        private void ShowSearchedBook(List<Book> books)
+        {
+            foreach (Book i in books)
+            {
+                tblBook.Rows.Add(new object[]
+                {
+                        i.idBook, i.nameBook, i.nameType, i.nameCompany, i.nameAuthor, i.number, i.price
                 });
             }
         }
@@ -387,9 +776,9 @@ namespace ADCBookApp
                 adapter.SelectCommand = command;
                 table.Clear();
                 adapter.Fill(table);
-                companiesSearched = new List<Company>();
-                ConvertDataTable(companiesSearched, table);
-                if (companiesSearched.Count == 0)
+                companies = new List<Company>();
+                ConvertDataTable(companies, table);
+                if (companies.Count == 0)
                 {
                     var msg = "Không tìm thấy kết quả nào.";
                     var title = "Kết quả tìm kiếm";
@@ -397,7 +786,7 @@ namespace ADCBookApp
                 }
                 else
                 {
-                    ShowSearchedCompany(companiesSearched);
+                    ShowSearchedCompany(companies);
                 }
             }
             else if (comboSeachCompany.SelectedIndex == 1)
@@ -406,9 +795,9 @@ namespace ADCBookApp
                 adapter.SelectCommand = command;
                 table.Clear();
                 adapter.Fill(table);
-                companiesSearched = new List<Company>();
-                ConvertDataTable(companiesSearched, table);
-                if (companiesSearched.Count == 0)
+                companies = new List<Company>();
+                ConvertDataTable(companies, table);
+                if (companies.Count == 0)
                 {
                     var msg = "Không tìm thấy kết quả nào.";
                     var title = "Kết quả tìm kiếm";
@@ -416,7 +805,7 @@ namespace ADCBookApp
                 }
                 else
                 {
-                    ShowSearchedCompany(companiesSearched);
+                    ShowSearchedCompany(companies);
                 }
             }
             else if (comboSeachCompany.SelectedIndex == 2)
@@ -425,9 +814,9 @@ namespace ADCBookApp
                 adapter.SelectCommand = command;
                 table.Clear();
                 adapter.Fill(table);
-                companiesSearched = new List<Company>();
-                ConvertDataTable(companiesSearched, table);
-                if (companiesSearched.Count == 0)
+                companies = new List<Company>();
+                ConvertDataTable(companies, table);
+                if (companies.Count == 0)
                 {
                     var msg = "Không tìm thấy kết quả nào.";
                     var title = "Kết quả tìm kiếm";
@@ -435,7 +824,7 @@ namespace ADCBookApp
                 }
                 else
                 {
-                    ShowSearchedCompany(companiesSearched);
+                    ShowSearchedCompany(companies);
                 }
             }
             else if (comboSeachCompany.SelectedIndex == 3)
@@ -444,9 +833,9 @@ namespace ADCBookApp
                 adapter.SelectCommand = command;
                 table.Clear();
                 adapter.Fill(table);
-                companiesSearched = new List<Company>();
-                ConvertDataTable(companiesSearched, table);
-                if (companiesSearched.Count == 0)
+                companies = new List<Company>();
+                ConvertDataTable(companies, table);
+                if (companies.Count == 0)
                 {
                     var msg = "Không tìm thấy kết quả nào.";
                     var title = "Kết quả tìm kiếm";
@@ -454,7 +843,7 @@ namespace ADCBookApp
                 }
                 else
                 {
-                    ShowSearchedCompany(companiesSearched);
+                    ShowSearchedCompany(companies);
                 }
             }
         }
@@ -479,9 +868,9 @@ namespace ADCBookApp
                 adapter.SelectCommand = command;
                 table.Clear();
                 adapter.Fill(table);
-                authorsSearched = new List<Author>();
-                ConvertDataTableAuthor(authorsSearched, table);
-                if (authorsSearched.Count == 0)
+                authors = new List<Author>();
+                ConvertDataTableAuthor(authors, table);
+                if (authors.Count == 0)
                 {
                     var msg = "Không tìm thấy kết quả nào.";
                     var title = "Kết quả tìm kiếm";
@@ -489,7 +878,7 @@ namespace ADCBookApp
                 }
                 else
                 {
-                    ShowSearchedAuthor(authorsSearched);
+                    ShowSearchedAuthor(authors);
                 }
             }
             else if (comboSeachAuthor.SelectedIndex == 1)
@@ -498,9 +887,9 @@ namespace ADCBookApp
                 adapter.SelectCommand = command;
                 table.Clear();
                 adapter.Fill(table);
-                authorsSearched = new List<Author>();
-                ConvertDataTableAuthor(authorsSearched, table);
-                if (authorsSearched.Count == 0)
+                authors = new List<Author>();
+                ConvertDataTableAuthor(authors, table);
+                if (authors.Count == 0)
                 {
                     var msg = "Không tìm thấy kết quả nào.";
                     var title = "Kết quả tìm kiếm";
@@ -508,10 +897,117 @@ namespace ADCBookApp
                 }
                 else
                 {
-                    ShowSearchedAuthor(authorsSearched);
+                    ShowSearchedAuthor(authors);
                 }
             }
         }
 
+        private void BtnSearchTypeClick(object sender, EventArgs e)
+        {
+            var key = txtSearchType.Text;
+            tblType.Rows.Clear();
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+
+            if (comboSeachType.SelectedIndex == -1)
+            {
+                var msg = "Vui lòng chọn tiêu chí tìm kiếm để tiếp tục";
+                var title = "Lỗi dữ liệu";
+                MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (comboSeachType.SelectedIndex == 0)
+            {
+                command.CommandText = "SELECT * FROM Type WHERE Type.idType = " + key + ";";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                types = new List<Type>();
+                ConvertDataTableType(types, table);
+                if (types.Count == 0)
+                {
+                    var msg = "Không tìm thấy kết quả nào.";
+                    var title = "Kết quả tìm kiếm";
+                    MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ShowSearchedType(types);
+                }
+            }
+            else if (comboSeachType.SelectedIndex == 1)
+            {
+                command.CommandText = "SELECT * FROM Type WHERE Type.nameType LIKE '%" + key + "%';";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                types = new List<Type>();
+                ConvertDataTableType(types, table);
+                if (types.Count == 0)
+                {
+                    var msg = "Không tìm thấy kết quả nào.";
+                    var title = "Kết quả tìm kiếm";
+                    MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ShowSearchedType(types);
+                }
+            }
+        }
+
+        private void BtnSearchBookClick(object sender, EventArgs e)
+        {
+            var key = txtSearchBook.Text;
+            tblBook.Rows.Clear();
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+
+            if (comboSeachBook.SelectedIndex == -1)
+            {
+                var msg = "Vui lòng chọn tiêu chí tìm kiếm để tiếp tục";
+                var title = "Lỗi dữ liệu";
+                MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (comboSeachBook.SelectedIndex == 0)
+            {
+                command.CommandText = "SELECT * FROM Book WHERE Book.idBook = " + key + ";";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                books = new List<Book>();
+                ConvertDataTableBook(books, table);
+                if (books.Count == 0)
+                {
+                    var msg = "Không tìm thấy kết quả nào.";
+                    var title = "Kết quả tìm kiếm";
+                    MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ShowSearchedBook(books);
+                }
+            }
+            else if (comboSeachBook.SelectedIndex == 1)
+            {
+                command.CommandText = "SELECT * FROM Book WHERE Book.nameBook LIKE '%" + key + "%';";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                books = new List<Book>();
+                ConvertDataTableBook(books, table);
+                if (books.Count == 0)
+                {
+                    var msg = "Không tìm thấy kết quả nào.";
+                    var title = "Kết quả tìm kiếm";
+                    MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ShowSearchedBook(books);
+                }
+            }
+        }
     }
 }
