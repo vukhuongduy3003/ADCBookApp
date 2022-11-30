@@ -1,11 +1,9 @@
-﻿using ADCBookApp;
+﻿using ADC;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Reflection;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace ADCBookApp
 {
@@ -21,6 +19,7 @@ namespace ADCBookApp
         public List<Author> authors;
         public List<Type> types;
         public List<Book> books;
+        public List<ExchangeBook> exchangeBooks;
         public HomeFrm()
         {
             InitializeComponent();
@@ -78,6 +77,21 @@ namespace ADCBookApp
                 book.number = Convert.ToInt32(table.Rows[i]["number"]);
                 book.price = Convert.ToInt32(table.Rows[i]["price"]);
                 bookList.Add(book);
+            }
+        }
+
+        public static void ConvertDataTableExchangeBook(List<ExchangeBook> exchangeBookList, DataTable table)
+        {
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                ExchangeBook exchangeBook = new ExchangeBook();
+                exchangeBook.idExchangeBook = Convert.ToInt32(table.Rows[i]["IdExchangeBook"]);
+                exchangeBook.nameBook = table.Rows[i]["nameBook"].ToString();
+                exchangeBook.number = Convert.ToInt32(table.Rows[i]["number"]);
+                exchangeBook.reason = table.Rows[i]["reason"].ToString();
+                exchangeBook.status = table.Rows[i]["status"].ToString();
+                exchangeBook.startDay = DateTime.Parse(table.Rows[i]["startDay"].ToString());
+                exchangeBookList.Add(exchangeBook);
             }
         }
 
@@ -233,33 +247,56 @@ namespace ADCBookApp
             }
         }
 
+        public void ShowExchangeBook()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM ExchangeBook WHERE ExchangeBook.[status] = N'Chưa đổi'";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            exchangeBooks = new List<ExchangeBook>();
+            tblExchangeBook.Rows.Clear();
+            ConvertDataTableExchangeBook(exchangeBooks, table);
+            foreach (ExchangeBook i in exchangeBooks)
+            {
+                tblExchangeBook.Rows.Add(new object[]
+                {
+
+                        i.idExchangeBook, i.nameBook, i.number, i.reason, i.status, i.startDay.ToString(), i.endDay.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.endDay.ToString()
+                });
+            }
+        }
+
         private void HomeFrm_Load(object sender, EventArgs e)
         {
             ShowCompany();
             ShowAuthor();
             ShowType();
             ShowBook();
+            ShowExchangeBook();
         }
 
         public void UpdateCompany(Company updateCompany)
         {
-                var newCompany = updateCompany as Company;
-                connection = new SqlConnection(str);
-                connection.Open();
-                command = connection.CreateCommand();
-                command.CommandText = "UPDATE Company SET nameCompany = N'" + newCompany.companyName + "', addressCompany = N'" + newCompany.address + "', phoneNumber = N'" + newCompany.phoneNumber + "' WHERE idCompany = " + newCompany.companyId + "";
-                adapter.SelectCommand = command;
-                table.Clear();
-                adapter.Fill(table);
-                tblCompany.Rows.Clear();
-                ConvertDataTable(companies, table);
-                foreach (Company i in companies)
+            var newCompany = updateCompany as Company;
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "UPDATE Company SET nameCompany = N'" + newCompany.companyName + "', addressCompany = N'" + newCompany.address + "', phoneNumber = N'" + newCompany.phoneNumber + "' WHERE idCompany = " + newCompany.companyId + "";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            tblCompany.Rows.Clear();
+            ConvertDataTable(companies, table);
+            foreach (Company i in companies)
+            {
+                tblCompany.Rows.Add(new object[]
                 {
-                    tblCompany.Rows.Add(new object[]
-                    {
                         i.companyId, i.companyName, i.address, i.phoneNumber
-                    });
-                }
+                });
+            }
         }
 
         public void UpdateAuthor(Author updateAuthor)
@@ -310,7 +347,7 @@ namespace ADCBookApp
             connection = new SqlConnection(str);
             connection.Open();
             command = connection.CreateCommand();
-            command.CommandText = "UPDATE Book SET nameBook = N'"+ updateBook.nameBook +"', Company_idCompany = (SELECT idCompany FROM Company WHERE nameCompany = N'"+ updateBook.nameCompany +"'), Author_idAuthor = (SELECT idAuthor FROM Author WHERE nameAuthor = N'"+ updateBook.nameAuthor +"'), Type_idType = (SELECT idType FROM Type WHERE nameType = N'"+ updateBook.nameType +"'), number = "+ updateBook.number + ", price = "+ updateBook.price +" WHERE idBook = "+ updateBook.idBook +";";
+            command.CommandText = "UPDATE Book SET nameBook = N'" + updateBook.nameBook + "', Company_idCompany = (SELECT idCompany FROM Company WHERE nameCompany = N'" + updateBook.nameCompany + "'), Author_idAuthor = (SELECT idAuthor FROM Author WHERE nameAuthor = N'" + updateBook.nameAuthor + "'), Type_idType = (SELECT idType FROM Type WHERE nameType = N'" + updateBook.nameType + "'), number = " + updateBook.number + ", price = " + updateBook.price + " WHERE idBook = " + updateBook.idBook + ";";
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);
@@ -323,6 +360,31 @@ namespace ADCBookApp
                         i.idBook, i.nameBook, i.nameType, i.nameCompany, i.nameAuthor, i.number, i.price
                 });
             }
+        }
+
+        public void UpdateExchangeBook(ExchangeBook exchangeBook)
+        {
+            if (exchangeBook.status == "Đã đổi")
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "UPDATE ExchangeBook SET ExchangeBook.number = " + exchangeBook.number + ", ExchangeBook.reason = N'" + exchangeBook.reason + "', ExchangeBook.[status] = N'" + exchangeBook.status + "', ExchangeBook.endDay = '" + DateTime.Now + "' WHERE ExchangeBook.IdExchangeBook = " + exchangeBook.idExchangeBook + ";";
+                adapter.SelectCommand = command;
+                ShowExchangeBook();
+            }
+            else if (exchangeBook.status == "Đã trả")
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "UPDATE ExchangeBook SET number = " + exchangeBook.number + ", reason = N'" + exchangeBook.reason + "', [status] = N'" + exchangeBook.status + "', endDay = '" + DateTime.Now + "' WHERE IdExchangeBook = " + exchangeBook.idExchangeBook + ";";
+                adapter.SelectCommand = command;
+                command.CommandText = "UPDATE Book SET number = (SELECT number FROM Book WHERE idBook = " + exchangeBook.idExchangeBook + ") - " + exchangeBook.number + " WHERE idBook = " + exchangeBook.idExchangeBook + ";";
+                adapter.SelectCommand = command;
+                ShowExchangeBook();
+            }
+
         }
 
         private void tblCompanyCellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -441,6 +503,16 @@ namespace ADCBookApp
             }
         }
 
+        private void tblExchangeBookCellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblExchangeBook.Columns["tblExchangeBookEdit"].Index)
+            {
+                ExchangeBook exchangeBook = exchangeBooks[e.RowIndex];
+                var updateExchangeBookView = new AddEditExchangeBookFrm(exchangeBook);
+                updateExchangeBookView.Show();
+            }
+        }
+
         private DialogResult ShowConfirmDialog(string msg, string title)
         {
             return MessageBox.Show(msg, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -488,6 +560,11 @@ namespace ADCBookApp
         private void btRefeshBook(object sender, EventArgs e)
         {
             ShowBook();
+        }
+
+        private void btRefeshExchangeBook(object sender, EventArgs e)
+        {
+            ShowExchangeBook();
         }
 
         private void SortCompany(object sender, EventArgs e)
@@ -762,7 +839,7 @@ namespace ADCBookApp
             connection = new SqlConnection(str);
             connection.Open();
             command = connection.CreateCommand();
-            
+
             if (comboSeachCompany.SelectedIndex == -1)
             {
                 var msg = "Vui lòng chọn tiêu chí tìm kiếm để tiếp tục";
@@ -771,7 +848,7 @@ namespace ADCBookApp
             }
             else if (comboSeachCompany.SelectedIndex == 0)
             {
-                
+
                 command.CommandText = "SELECT * FROM Company WHERE Company.idCompany = " + key + ";";
                 adapter.SelectCommand = command;
                 table.Clear();
@@ -1009,5 +1086,45 @@ namespace ADCBookApp
                 }
             }
         }
+
+        private void BtnAddExchangeBookClick(object sender, EventArgs e)
+        {
+            var key = txtSearchExchangeBook.Text;
+            tblExchangeBook.Rows.Clear();
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+
+            if (comboSeachExchangeBook.SelectedIndex == -1)
+            {
+                var msg = "Vui lòng chọn tiêu chí tìm kiếm để tiếp tục";
+                var title = "Lỗi dữ liệu";
+                MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (comboSeachExchangeBook.SelectedIndex == 0)
+            {
+                command.CommandText = "SELECT * FROM Book WHERE Book.idBook = " + key + ";";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+
+                if (table.Rows.Count == 0)
+                {
+                    var msg = "Không tìm thấy kết quả nào.";
+                    var title = "Kết quả tìm kiếm";
+                    MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ExchangeBook exchangeBook = new ExchangeBook();
+                    exchangeBook.idExchangeBook = Convert.ToInt32(table.Rows[0]["idBook"]);
+                    exchangeBook.nameBook = table.Rows[0]["nameBook"].ToString();
+                    var childView = new AddEditExchangeBookFrm(exchangeBook);
+                    childView.Show();
+                }
+            }
+        }
+
+
     }
 }

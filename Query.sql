@@ -1,4 +1,4 @@
-CREATE DATABASE DataADCBook;
+﻿CREATE DATABASE DataADCBook;
 USE DataADCBook;
 CREATE TABLE Company (
 	idCompany INT PRIMARY KEY IDENTITY,
@@ -20,19 +20,30 @@ CREATE TABLE [Type] (
 );
 
 CREATE TABLE ExchangeBook (
-	IdExchangeBook INT PRIMARY KEY IDENTITY,
+	id INT PRIMARY KEY IDENTITY,
+	IdExchangeBook INT NOT NULL,
 	nameBook NVARCHAR(100) NOT NULL,
+	number INT NOT NULL,
 	reason NVARCHAR(100) NOT NULL,
 	[status] NVARCHAR(100) NOT NULL,
 	startDay DATETIME NOT NULL,
-	endDay DATETIME NOT NULL
+	endDay DATETIME
 );
+
+UPDATE ExchangeBook SET ExchangeBook.number = 1, ExchangeBook.reason = N'dấdasd', ExchangeBook.[status] = N'adsadsa', ExchangeBook.endDay = '2022-11-30 03:41:10.000' WHERE ExchangeBook.IdExchangeBook = 1;
+
+SELECT * FROM ExchangeBook WHERE ExchangeBook.[status] = N'Chưa đổi';
+
+UPDATE ExchangeBook SET number = 4, reason = N'd', [status] = N'Đã đổi' WHERE IdExchangeBook = '1';
+
+UPDATE Book SET number = (SELECT number FROM Book WHERE idBook = 1) - 1 WHERE idBook = 1;
 
 CREATE TABLE Discount (
 	idDiscount INT PRIMARY KEY IDENTITY,
 	nameDiscount NVARCHAR(100) NOT NULL,
 	StartDiscountDate DATE NOT NULL,
-	EndDiscountDate DATE NOT NULL
+	EndDiscountDate DATE NOT NULL,
+	Discount INT NOT NULL
 )
 
 CREATE TABLE Custommer (
@@ -60,6 +71,9 @@ CREATE TABLE Book (
 	FOREIGN KEY (Type_idType)
     REFERENCES [Type] (idType)
 );
+
+SELECT * FROM Book, Company, [Type], Author WHERE Book.Company_idCompany = Company.idCompany AND Book.Author_idAuthor = Author.idAuthor AND Book.Type_idType = [Type].idType;
+UPDATE Book SET nameBook = N'TORO', Company_idCompany = (SELECT idCompany FROM Company WHERE nameCompany = N'Tuổi trẻ'), Author_idAuthor = (SELECT idAuthor FROM Author WHERE nameAuthor = N'Vũ Khương Duy'), Type_idType = (SELECT idType FROM Type WHERE nameType = N'Giải trí'), number = 2, price = 9999 WHERE idBook = 1;
 
 CREATE TABLE Bill (
 	idBill INT PRIMARY KEY IDENTITY,

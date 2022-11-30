@@ -29,3 +29,4 @@ C:\Users\vukhu\Downloads\Do_an_1\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.AddE
 C:\Users\vukhu\Downloads\Do_an_1\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.AddEditAuthorFrm.resources
 C:\Users\vukhu\Downloads\Do_an_1\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.AddEditTypeFrm.resources
 C:\Users\vukhu\Downloads\Do_an_1\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.AddEditBookFrm.resources
+C:\Users\vukhu\Downloads\Do_an_1\ADCBookApp\ADCBookApp\obj\Debug\ADC.AddEditExchangeBookFrm.resources
