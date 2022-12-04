@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAddNewExchangeBook = new System.Windows.Forms.Button();
-            this.txtExchangeId = new System.Windows.Forms.TextBox();
+            this.txtIdBook = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtExchangeName = new System.Windows.Forms.TextBox();
             this.txtExchangeStatus = new System.Windows.Forms.ComboBox();
@@ -41,6 +41,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtExchangeReason = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtIdExchangeBook = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtExchangeNumber)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 158);
+            this.label4.Location = new System.Drawing.Point(47, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 3;
@@ -82,20 +84,20 @@
             this.btnAddNewExchangeBook.UseVisualStyleBackColor = true;
             this.btnAddNewExchangeBook.Click += new System.EventHandler(this.BtnAddExchangeBookClick);
             // 
-            // txtExchangeId
+            // txtIdBook
             // 
-            this.txtExchangeId.Enabled = false;
-            this.txtExchangeId.Location = new System.Drawing.Point(191, 71);
-            this.txtExchangeId.Name = "txtExchangeId";
-            this.txtExchangeId.ReadOnly = true;
-            this.txtExchangeId.Size = new System.Drawing.Size(265, 26);
-            this.txtExchangeId.TabIndex = 7;
-            this.txtExchangeId.Text = "0";
+            this.txtIdBook.Enabled = false;
+            this.txtIdBook.Location = new System.Drawing.Point(191, 71);
+            this.txtIdBook.Name = "txtIdBook";
+            this.txtIdBook.ReadOnly = true;
+            this.txtIdBook.Size = new System.Drawing.Size(265, 26);
+            this.txtIdBook.TabIndex = 7;
+            this.txtIdBook.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(48, 254);
+            this.label7.Location = new System.Drawing.Point(47, 249);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 20);
             this.label7.TabIndex = 9;
@@ -116,14 +118,14 @@
             "Chưa đổi",
             "Đã đổi",
             "Đã trả"});
-            this.txtExchangeStatus.Location = new System.Drawing.Point(191, 254);
+            this.txtExchangeStatus.Location = new System.Drawing.Point(190, 249);
             this.txtExchangeStatus.Name = "txtExchangeStatus";
             this.txtExchangeStatus.Size = new System.Drawing.Size(265, 28);
             this.txtExchangeStatus.TabIndex = 13;
             // 
             // txtExchangeNumber
             // 
-            this.txtExchangeNumber.Location = new System.Drawing.Point(191, 158);
+            this.txtExchangeNumber.Location = new System.Drawing.Point(190, 157);
             this.txtExchangeNumber.Name = "txtExchangeNumber";
             this.txtExchangeNumber.Size = new System.Drawing.Size(265, 26);
             this.txtExchangeNumber.TabIndex = 14;
@@ -141,7 +143,7 @@
             // 
             // txtExchangeReason
             // 
-            this.txtExchangeReason.Location = new System.Drawing.Point(191, 206);
+            this.txtExchangeReason.Location = new System.Drawing.Point(190, 201);
             this.txtExchangeReason.Name = "txtExchangeReason";
             this.txtExchangeReason.Size = new System.Drawing.Size(265, 26);
             this.txtExchangeReason.TabIndex = 17;
@@ -149,24 +151,45 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 209);
+            this.label3.Location = new System.Drawing.Point(48, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 20);
             this.label3.TabIndex = 16;
             this.label3.Text = "Lý do đổi trả:";
+            // 
+            // txtIdExchangeBook
+            // 
+            this.txtIdExchangeBook.Enabled = false;
+            this.txtIdExchangeBook.Location = new System.Drawing.Point(191, 32);
+            this.txtIdExchangeBook.Name = "txtIdExchangeBook";
+            this.txtIdExchangeBook.ReadOnly = true;
+            this.txtIdExchangeBook.Size = new System.Drawing.Size(265, 26);
+            this.txtIdExchangeBook.TabIndex = 19;
+            this.txtIdExchangeBook.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(49, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 20);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Mã đổi trả:";
             // 
             // AddEditExchangeBookFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 416);
+            this.Controls.Add(this.txtIdExchangeBook);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtExchangeReason);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtExchangeNumber);
             this.Controls.Add(this.txtExchangeStatus);
             this.Controls.Add(this.txtExchangeName);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtExchangeId);
+            this.Controls.Add(this.txtIdBook);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAddNewExchangeBook);
             this.Controls.Add(this.label4);
@@ -194,12 +217,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAddNewExchangeBook;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtExchangeId;
+        private System.Windows.Forms.TextBox txtIdBook;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtExchangeName;
         private System.Windows.Forms.ComboBox txtExchangeStatus;
         private System.Windows.Forms.NumericUpDown txtExchangeNumber;
         private System.Windows.Forms.TextBox txtExchangeReason;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtIdExchangeBook;
+        private System.Windows.Forms.Label label5;
     }
 }

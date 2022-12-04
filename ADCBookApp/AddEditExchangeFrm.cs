@@ -40,7 +40,8 @@ namespace ADC
 
         private void ShowExchangeBookData()
         {
-            txtExchangeId.Text = $"{exchangeBook.idExchangeBook}";
+            txtIdExchangeBook.Text = $"{exchangeBook.idExchangeBook}";
+            txtIdBook.Text = $"{exchangeBook.idBook}";
             txtExchangeName.Text = exchangeBook.nameBook;
             txtExchangeNumber.Text = $"{exchangeBook.number}";
             txtExchangeReason.Text = exchangeBook.reason;
@@ -49,7 +50,8 @@ namespace ADC
 
         private void BtnAddExchangeBookClick(object sender, EventArgs e)
         {
-            var ExchangeBookId = int.Parse(txtExchangeId.Text);
+            var ExchangeBookId = int.Parse(txtIdExchangeBook.Text);
+            var BookId = int.Parse(txtIdBook.Text);
             var ExchangeBookName = txtExchangeName.Text;
             var ExchangeBookNumber = int.Parse(txtExchangeNumber.Text);
             var ExchangeBookReason = txtExchangeReason.Text;
@@ -65,6 +67,7 @@ namespace ADC
                 if (btnAddNewExchangeBook.Text.CompareTo("Cập nhật") == 0)
                 {
                     exchangeBook.idExchangeBook = ExchangeBookId;
+                    exchangeBook.idBook = BookId;
                     exchangeBook.nameBook = ExchangeBookName;
                     exchangeBook.number = ExchangeBookNumber;
                     exchangeBook.reason = ExchangeBookReason;
@@ -78,13 +81,23 @@ namespace ADC
                         Dispose();
                     }
                 }
-                else // thêm mới NXB
+                else if (ExchangeBookStatus == "Chưa đổi")
                 {
                     connection = new SqlConnection(str);
                     connection.Open();
                     command = connection.CreateCommand();
-                    command.CommandText = $"INSERT INTO ExchangeBook (IdExchangeBook, nameBook, number, reason, [status], startDay)" +
-                        $"VALUES (" + ExchangeBookId + ", N'" + ExchangeBookName + "', " + ExchangeBookNumber + ", N'" + ExchangeBookReason + "', N'" + ExchangeBookStatus + "', '" + DateTime.Now + "');";
+                    command.CommandText = $"INSERT INTO ExchangeBook (idBook, nameBook, number, reason, [status], startDay)" +
+                        $"VALUES (" + BookId + ", N'" + ExchangeBookName + "', " + ExchangeBookNumber + ", N'" + ExchangeBookReason + "', N'" + ExchangeBookStatus + "', '" + DateTime.Now + "');";
+                    command.ExecuteNonQuery();
+                    HomeFrm.hform.ShowExchangeBook();
+                }
+                else
+                {
+                    connection = new SqlConnection(str);
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = $"INSERT INTO ExchangeBook (idBook, nameBook, number, reason, [status], startDay, endDay)" +
+                        $"VALUES (" + BookId + ", N'" + ExchangeBookName + "', " + ExchangeBookNumber + ", N'" + ExchangeBookReason + "', N'" + ExchangeBookStatus + "', '" + DateTime.Now + "', '" + DateTime.Now + "');";
                     command.ExecuteNonQuery();
                     HomeFrm.hform.ShowExchangeBook();
                 }

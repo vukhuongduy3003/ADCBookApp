@@ -5,6 +5,7 @@ namespace ADCBookApp
     public class ExchangeBook
     {
         public int idExchangeBook { get; set; }
+        public int idBook { get; set; }
         public string nameBook { get; set; }
         public int number { get; set; }
         public string reason { get; set; }

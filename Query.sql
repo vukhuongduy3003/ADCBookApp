@@ -20,8 +20,8 @@ CREATE TABLE [Type] (
 );
 
 CREATE TABLE ExchangeBook (
-	id INT PRIMARY KEY IDENTITY,
-	IdExchangeBook INT NOT NULL,
+	idExchangeBook INT PRIMARY KEY IDENTITY,
+	idBook INT NOT NULL,
 	nameBook NVARCHAR(100) NOT NULL,
 	number INT NOT NULL,
 	reason NVARCHAR(100) NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE [Order] (
 	idOrder INT PRIMARY KEY IDENTITY,
 	nameOrder VARCHAR(100) NOT NULL,
 	CreateDateOrder DATETIME NOT NULL,
-	BillTotal FLOAT NOT NULL,
+	BillTotal INT NOT NULL,
 	StatusOrder VARCHAR(100) NOT NULL,
-	BillDate DATETIME NULL
+	BillDate DATETIME
 )

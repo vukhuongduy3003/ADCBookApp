@@ -20,6 +20,7 @@ namespace ADCBookApp
         public List<Type> types;
         public List<Book> books;
         public List<ExchangeBook> exchangeBooks;
+        public List<Order> orders;
         public HomeFrm()
         {
             InitializeComponent();
@@ -85,13 +86,36 @@ namespace ADCBookApp
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 ExchangeBook exchangeBook = new ExchangeBook();
-                exchangeBook.idExchangeBook = Convert.ToInt32(table.Rows[i]["IdExchangeBook"]);
+                exchangeBook.idExchangeBook = Convert.ToInt32(table.Rows[i]["idExchangeBook"]);
+                exchangeBook.idBook = Convert.ToInt32(table.Rows[i]["idBook"]);
                 exchangeBook.nameBook = table.Rows[i]["nameBook"].ToString();
                 exchangeBook.number = Convert.ToInt32(table.Rows[i]["number"]);
                 exchangeBook.reason = table.Rows[i]["reason"].ToString();
                 exchangeBook.status = table.Rows[i]["status"].ToString();
                 exchangeBook.startDay = DateTime.Parse(table.Rows[i]["startDay"].ToString());
+                if (table.Rows[i]["endDay"] != DBNull.Value)
+                {
+                    exchangeBook.endDay = DateTime.Parse(table.Rows[i]["endDay"].ToString());
+                }
                 exchangeBookList.Add(exchangeBook);
+            }
+        }
+
+        public static void ConvertDataTableOrder(List<Order> orderList, DataTable table)
+        {
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                Order order = new Order();
+                order.idOrder = Convert.ToInt32(table.Rows[i]["idOrder"]);
+                order.nameOrder = table.Rows[i]["nameOrder"].ToString();
+                order.CreateDateOrder = DateTime.Parse(table.Rows[i]["CreateDateOrder"].ToString());
+                order.BillTotal = Convert.ToInt32(table.Rows[i]["BillTotal"]);
+                if (table.Rows[i]["BillDate"] != DBNull.Value)
+                {
+                    order.BillDate = DateTime.Parse(table.Rows[i]["BillDate"].ToString());
+                }
+                order.StatusOrder = table.Rows[i]["StatusOrder"].ToString();
+                orderList.Add(order);
             }
         }
 
@@ -263,8 +287,49 @@ namespace ADCBookApp
             {
                 tblExchangeBook.Rows.Add(new object[]
                 {
+                    i.idExchangeBook, i.idBook, i.nameBook, i.number, i.reason, i.status, i.startDay.ToString(), i.endDay.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.endDay.ToString()
+                });
+            }
+        }
 
-                        i.idExchangeBook, i.nameBook, i.number, i.reason, i.status, i.startDay.ToString(), i.endDay.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.endDay.ToString()
+        public void ShowOrder()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM [Order]";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            orders = new List<Order>();
+            tblOrder.Rows.Clear();
+            ConvertDataTableOrder(orders, table);
+            foreach (Order i in orders)
+            {
+                tblOrder.Rows.Add(new object[]
+                {
+                    i.idOrder, i.nameOrder, i.CreateDateOrder, i.BillTotal, i.BillDate.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.BillDate.ToString(), i.StatusOrder
+                });
+            }
+        }
+
+        public void ShowOrderBill()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM [Order] WHERE [Order].StatusOrder = N'Chua thanh toan';";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            orders = new List<Order>();
+            tblOrderBill.Rows.Clear();
+            ConvertDataTableOrder(orders, table);
+            foreach (Order i in orders)
+            {
+                tblOrderBill.Rows.Add(new object[]
+                {
+                    i.idOrder, i.nameOrder, i.CreateDateOrder, i.BillTotal, i.BillDate.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.BillDate.ToString(), i.StatusOrder
                 });
             }
         }
@@ -369,8 +434,10 @@ namespace ADCBookApp
                 connection = new SqlConnection(str);
                 connection.Open();
                 command = connection.CreateCommand();
-                command.CommandText = "UPDATE ExchangeBook SET ExchangeBook.number = " + exchangeBook.number + ", ExchangeBook.reason = N'" + exchangeBook.reason + "', ExchangeBook.[status] = N'" + exchangeBook.status + "', ExchangeBook.endDay = '" + DateTime.Now + "' WHERE ExchangeBook.IdExchangeBook = " + exchangeBook.idExchangeBook + ";";
+                command.CommandText = "UPDATE ExchangeBook SET ExchangeBook.number = " + exchangeBook.number + ", ExchangeBook.reason = N'" + exchangeBook.reason + "', ExchangeBook.[status] = N'" + exchangeBook.status + "', ExchangeBook.endDay = '" + DateTime.Now + "' WHERE ExchangeBook.idExchangeBook = " + exchangeBook.idExchangeBook + ";";
                 adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
                 ShowExchangeBook();
             }
             else if (exchangeBook.status == "Đã trả")
@@ -380,11 +447,14 @@ namespace ADCBookApp
                 command = connection.CreateCommand();
                 command.CommandText = "UPDATE ExchangeBook SET number = " + exchangeBook.number + ", reason = N'" + exchangeBook.reason + "', [status] = N'" + exchangeBook.status + "', endDay = '" + DateTime.Now + "' WHERE IdExchangeBook = " + exchangeBook.idExchangeBook + ";";
                 adapter.SelectCommand = command;
-                command.CommandText = "UPDATE Book SET number = (SELECT number FROM Book WHERE idBook = " + exchangeBook.idExchangeBook + ") - " + exchangeBook.number + " WHERE idBook = " + exchangeBook.idExchangeBook + ";";
+                table.Clear();
+                adapter.Fill(table);
+                command.CommandText = "UPDATE Book SET number = (SELECT number FROM Book WHERE idBook = " + exchangeBook.idBook + ") - " + exchangeBook.number + " WHERE idBook = " + exchangeBook.idExchangeBook + ";";
                 adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
                 ShowExchangeBook();
             }
-
         }
 
         private void tblCompanyCellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -513,6 +583,39 @@ namespace ADCBookApp
             }
         }
 
+        private void tblOrderCellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var title = "Xác nhận sửa";
+            var msg = "Bạn có chắc chắn muốn sửa bản ghi này không?";
+            var ans = ShowConfirmDialog(msg, title);
+            if (ans == DialogResult.Yes)
+            {
+                Order order = new Order();
+                order.idOrder = Int32.Parse(tblOrderBill.Rows[tblOrderBill.CurrentRow.Index].Cells[0].Value.ToString());
+                order.StatusOrder = tblOrderBill.Rows[tblOrderBill.CurrentRow.Index].Cells[5].Value.ToString();
+
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "UPDATE [Order] SET [Order].StatusOrder = N'" + order.StatusOrder + "' WHERE [Order].idOrder = " + order.idOrder + "";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                orders = new List<Order>();
+                tblOrderBill.Rows.Clear();
+                ConvertDataTableOrder(orders, table);
+                foreach (Order i in orders)
+                {
+                    tblOrderBill.Rows.Add(new object[]
+                    {
+                    i.idOrder, i.nameOrder, i.CreateDateOrder, i.BillTotal, i.BillDate.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.BillDate.ToString(), i.StatusOrder
+                    });
+                }
+                ShowOrderBill();
+                MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private DialogResult ShowConfirmDialog(string msg, string title)
         {
             return MessageBox.Show(msg, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -542,6 +645,12 @@ namespace ADCBookApp
             childView.Show();
         }
 
+        private void BtnAddNewOrderClick(object sender, EventArgs e)
+        {
+            var childView = new AddEditOrderFrm();
+            childView.Show();
+        }
+
         private void btRefeshCompany(object sender, EventArgs e)
         {
             ShowCompany();
@@ -565,6 +674,11 @@ namespace ADCBookApp
         private void btRefeshExchangeBook(object sender, EventArgs e)
         {
             ShowExchangeBook();
+        }
+
+        private void btRefeshOrder(object sender, EventArgs e)
+        {
+            ShowOrder();
         }
 
         private void SortCompany(object sender, EventArgs e)
@@ -828,6 +942,17 @@ namespace ADCBookApp
                 tblBook.Rows.Add(new object[]
                 {
                         i.idBook, i.nameBook, i.nameType, i.nameCompany, i.nameAuthor, i.number, i.price
+                });
+            }
+        }
+
+        private void ShowSearchedOrder(List<Order> orders)
+        {
+            foreach (Order i in orders)
+            {
+                tblOrder.Rows.Add(new object[]
+                {
+                    i.idOrder, i.nameOrder, i.CreateDateOrder, i.BillTotal, i.BillDate.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.BillDate.ToString(), i.StatusOrder
                 });
             }
         }
@@ -1117,7 +1242,7 @@ namespace ADCBookApp
                 else
                 {
                     ExchangeBook exchangeBook = new ExchangeBook();
-                    exchangeBook.idExchangeBook = Convert.ToInt32(table.Rows[0]["idBook"]);
+                    exchangeBook.idBook = Convert.ToInt32(table.Rows[0]["idBook"]);
                     exchangeBook.nameBook = table.Rows[0]["nameBook"].ToString();
                     var childView = new AddEditExchangeBookFrm(exchangeBook);
                     childView.Show();
@@ -1125,6 +1250,155 @@ namespace ADCBookApp
             }
         }
 
+        private void btShowListExchangeBookClick(object sender, EventArgs e)
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM ExchangeBook WHERE ExchangeBook.[status] = N'Đã đổi' OR ExchangeBook.[status] = N'Đã trả'";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            exchangeBooks = new List<ExchangeBook>();
+            tblExchangeBook.Rows.Clear();
+            ConvertDataTableExchangeBook(exchangeBooks, table);
+            foreach (ExchangeBook i in exchangeBooks)
+            {
+                tblExchangeBook.Rows.Add(new object[]
+                {
+                    i.idExchangeBook, i.idBook, i.nameBook, i.number, i.reason, i.status, i.startDay.ToString(), i.endDay.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.endDay.ToString()
+                });
+            }
+        }
 
+        private void BtnSearchOrderClick(object sender, EventArgs e)
+        {
+            var key = txtSearchOrder.Text;
+            tblOrder.Rows.Clear();
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+
+            if (comboSeachOrder.SelectedIndex == -1)
+            {
+                var msg = "Vui lòng chọn tiêu chí tìm kiếm để tiếp tục";
+                var title = "Lỗi dữ liệu";
+                MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (comboSeachOrder.SelectedIndex == 0)
+            {
+                command.CommandText = "SELECT * FROM [Order] WHERE [Order].idOrder = " + key + ";";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                orders = new List<Order>();
+                ConvertDataTableOrder(orders, table);
+                if (orders.Count == 0)
+                {
+                    var msg = "Không tìm thấy kết quả nào.";
+                    var title = "Kết quả tìm kiếm";
+                    MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ShowSearchedOrder(orders);
+                }
+            }
+            else if (comboSeachOrder.SelectedIndex == 1)
+            {
+                command.CommandText = "SELECT * FROM [Order] WHERE [Order].nameOrder LIKE '%" + key + "%';";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                orders = new List<Order>();
+                ConvertDataTableOrder(orders, table);
+                if (orders.Count == 0)
+                {
+                    var msg = "Không tìm thấy kết quả nào.";
+                    var title = "Kết quả tìm kiếm";
+                    MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ShowSearchedOrder(orders);
+                }
+            }
+        }
+
+        private void tabControlClick(object sender, EventArgs e)
+        {
+            if (tabControl.SelectedIndex == 0)
+            {
+                ShowCompany();
+                ShowAuthor();
+                ShowType();
+                ShowBook();
+                ShowExchangeBook();
+            }
+            else if (tabControl.SelectedIndex == 1)
+            {
+                tabControlOrderClick(sender, e);
+            }
+            else if (tabControl.SelectedIndex == 2)
+            {
+                BookPayClick(sender, e);
+            }
+            else
+            {
+                ReportClick(sender, e);
+            }
+        }
+
+        private void tabControlOrderClick(object sender, EventArgs e)
+        {
+            if (tabControlOrder.SelectedIndex == 0)
+            {
+                ShowOrder();
+            }
+            else
+            {
+                ShowOrderBill();
+            }
+        }
+
+        private void BookPayClick(object sender, EventArgs e)
+        {
+            if (tabControlBookPay.SelectedIndex == 0)
+            {
+
+            }
+            else if (tabControlBookPay.SelectedIndex == 1)
+            {
+
+            }
+            else if (tabControlBookPay.SelectedIndex == 2)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void ReportClick(object sender, EventArgs e)
+        {
+            if (tabControlReport.SelectedIndex == 0)
+            {
+
+            }
+            else if (tabControlReport.SelectedIndex == 1)
+            {
+
+            }
+            else if (tabControlReport.SelectedIndex == 2)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }

@@ -53,6 +53,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -71,7 +72,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeFrm));
             this.comboStat = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -256,23 +258,38 @@
             this.tblBookRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabLie = new System.Windows.Forms.TabPage();
             this.tblExchangeBook = new System.Windows.Forms.DataGridView();
+            this.idExchangeBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblExchangeBookEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.button28 = new System.Windows.Forms.Button();
+            this.txtSearchExchangeBook = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.comboSeachExchangeBook = new System.Windows.Forms.ComboBox();
+            this.button27 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabControlOrder = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.button14 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearchOrder = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboSeachOrder = new System.Windows.Forms.ComboBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tblOrder = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -280,15 +297,9 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblOrderBill = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabControlBookPay = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.button17 = new System.Windows.Forms.Button();
@@ -362,7 +373,7 @@
             this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabControlReport = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.label30 = new System.Windows.Forms.Label();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
@@ -392,20 +403,13 @@
             this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button27 = new System.Windows.Forms.Button();
-            this.txtSearchExchangeBook = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.comboSeachExchangeBook = new System.Windows.Forms.ComboBox();
-            this.button28 = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblExchangeBookEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column41 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tblOrderEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudStat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemTo)).BeginInit();
@@ -433,18 +437,18 @@
             this.tabLie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblExchangeBook)).BeginInit();
             this.groupBox11.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tabControlOrder.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblOrder)).BeginInit();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblOrderBill)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.tabControl3.SuspendLayout();
+            this.tabControlBookPay.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -461,7 +465,7 @@
             this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.tabControl4.SuspendLayout();
+            this.tabControlReport.SuspendLayout();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage10.SuspendLayout();
@@ -1408,11 +1412,12 @@
             this.tabControlCategory.Location = new System.Drawing.Point(0, 0);
             this.tabControlCategory.Name = "tabControlCategory";
             this.tabControlCategory.SelectedIndex = 0;
-            this.tabControlCategory.Size = new System.Drawing.Size(1100, 662);
+            this.tabControlCategory.Size = new System.Drawing.Size(1100, 672);
             this.tabControlCategory.TabIndex = 2;
             // 
             // tabNXB
             // 
+            this.tabNXB.BackColor = System.Drawing.SystemColors.Control;
             this.tabNXB.Controls.Add(this.groupBox3);
             this.tabNXB.Controls.Add(this.groupBox2);
             this.tabNXB.Controls.Add(this.groupBox1);
@@ -1420,10 +1425,9 @@
             this.tabNXB.Location = new System.Drawing.Point(4, 32);
             this.tabNXB.Name = "tabNXB";
             this.tabNXB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNXB.Size = new System.Drawing.Size(1092, 626);
+            this.tabNXB.Size = new System.Drawing.Size(1092, 636);
             this.tabNXB.TabIndex = 0;
             this.tabNXB.Text = "Nhà xuất bản";
-            this.tabNXB.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -1578,7 +1582,7 @@
             this.phoneNumber,
             this.tblCompanyEdit,
             this.tblCompanyRemove});
-            this.tblCompany.Location = new System.Drawing.Point(6, 6);
+            this.tblCompany.Location = new System.Drawing.Point(-4, 3);
             this.tblCompany.Name = "tblCompany";
             this.tblCompany.RowHeadersWidth = 51;
             this.tblCompany.Size = new System.Drawing.Size(1079, 415);
@@ -1644,7 +1648,7 @@
             this.tabAuthor.Location = new System.Drawing.Point(4, 32);
             this.tabAuthor.Name = "tabAuthor";
             this.tabAuthor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAuthor.Size = new System.Drawing.Size(1092, 626);
+            this.tabAuthor.Size = new System.Drawing.Size(1092, 636);
             this.tabAuthor.TabIndex = 1;
             this.tabAuthor.Text = "Tác giả";
             this.tabAuthor.UseVisualStyleBackColor = true;
@@ -1864,7 +1868,7 @@
             this.tabCategory.Location = new System.Drawing.Point(4, 32);
             this.tabCategory.Name = "tabCategory";
             this.tabCategory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCategory.Size = new System.Drawing.Size(1092, 626);
+            this.tabCategory.Size = new System.Drawing.Size(1092, 636);
             this.tabCategory.TabIndex = 2;
             this.tabCategory.Text = "Thể loại";
             this.tabCategory.UseVisualStyleBackColor = true;
@@ -2066,7 +2070,7 @@
             this.tabBookStore.Location = new System.Drawing.Point(4, 32);
             this.tabBookStore.Name = "tabBookStore";
             this.tabBookStore.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBookStore.Size = new System.Drawing.Size(1092, 626);
+            this.tabBookStore.Size = new System.Drawing.Size(1092, 636);
             this.tabBookStore.TabIndex = 3;
             this.tabBookStore.Text = "Kho sách";
             this.tabBookStore.UseVisualStyleBackColor = true;
@@ -2327,7 +2331,7 @@
             this.tabLie.Location = new System.Drawing.Point(4, 32);
             this.tabLie.Name = "tabLie";
             this.tabLie.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLie.Size = new System.Drawing.Size(1092, 626);
+            this.tabLie.Size = new System.Drawing.Size(1092, 636);
             this.tabLie.TabIndex = 4;
             this.tabLie.Text = "Đổi trả";
             this.tabLie.UseVisualStyleBackColor = true;
@@ -2336,18 +2340,21 @@
             // 
             this.tblExchangeBook.AllowUserToAddRows = false;
             this.tblExchangeBook.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tblExchangeBook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.tblExchangeBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblExchangeBook.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblExchangeBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblExchangeBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.tblExchangeBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblExchangeBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idExchangeBook,
             this.dataGridViewTextBoxColumn34,
             this.dataGridViewTextBoxColumn35,
             this.Column40,
@@ -2362,6 +2369,71 @@
             this.tblExchangeBook.Size = new System.Drawing.Size(1086, 481);
             this.tblExchangeBook.TabIndex = 13;
             this.tblExchangeBook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblExchangeBookCellContentClick);
+            // 
+            // idExchangeBook
+            // 
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idExchangeBook.DefaultCellStyle = dataGridViewCellStyle27;
+            this.idExchangeBook.HeaderText = "Mã đổi trả";
+            this.idExchangeBook.MinimumWidth = 6;
+            this.idExchangeBook.Name = "idExchangeBook";
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.HeaderText = "Mã sách";
+            this.dataGridViewTextBoxColumn34.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.HeaderText = "Tên sách";
+            this.dataGridViewTextBoxColumn35.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column40
+            // 
+            this.Column40.HeaderText = "Số lượng";
+            this.Column40.MinimumWidth = 6;
+            this.Column40.Name = "Column40";
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.HeaderText = "Lý do cần đổi";
+            this.dataGridViewTextBoxColumn36.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.HeaderText = "Trạng thái";
+            this.dataGridViewTextBoxColumn37.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn37.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column43
+            // 
+            this.Column43.HeaderText = "Ngày đổi trả";
+            this.Column43.MinimumWidth = 6;
+            this.Column43.Name = "Column43";
+            // 
+            // Column44
+            // 
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column44.DefaultCellStyle = dataGridViewCellStyle28;
+            this.Column44.HeaderText = "Ngày đổi thành công";
+            this.Column44.MinimumWidth = 6;
+            this.Column44.Name = "Column44";
+            // 
+            // tblExchangeBookEdit
+            // 
+            this.tblExchangeBookEdit.HeaderText = "Sửa";
+            this.tblExchangeBookEdit.MinimumWidth = 6;
+            this.tblExchangeBookEdit.Name = "tblExchangeBookEdit";
+            this.tblExchangeBookEdit.Text = "Sửa";
+            this.tblExchangeBookEdit.UseColumnTextForButtonValue = true;
             // 
             // groupBox11
             // 
@@ -2379,6 +2451,64 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Hành động";
             // 
+            // button28
+            // 
+            this.button28.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button28.Location = new System.Drawing.Point(534, 46);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(140, 53);
+            this.button28.TabIndex = 10;
+            this.button28.Text = "Làm mới";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.btRefeshExchangeBook);
+            // 
+            // txtSearchExchangeBook
+            // 
+            this.txtSearchExchangeBook.Location = new System.Drawing.Point(180, 47);
+            this.txtSearchExchangeBook.Name = "txtSearchExchangeBook";
+            this.txtSearchExchangeBook.Size = new System.Drawing.Size(203, 26);
+            this.txtSearchExchangeBook.TabIndex = 9;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(105, 50);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(80, 20);
+            this.label33.TabIndex = 8;
+            this.label33.Text = "Nội dung:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(105, 16);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(73, 20);
+            this.label34.TabIndex = 7;
+            this.label34.Text = "Tiêu chí:";
+            // 
+            // comboSeachExchangeBook
+            // 
+            this.comboSeachExchangeBook.FormattingEnabled = true;
+            this.comboSeachExchangeBook.Items.AddRange(new object[] {
+            "Mã sách",
+            "Tên sách"});
+            this.comboSeachExchangeBook.Location = new System.Drawing.Point(180, 13);
+            this.comboSeachExchangeBook.Name = "comboSeachExchangeBook";
+            this.comboSeachExchangeBook.Size = new System.Drawing.Size(203, 28);
+            this.comboSeachExchangeBook.TabIndex = 6;
+            // 
+            // button27
+            // 
+            this.button27.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button27.Location = new System.Drawing.Point(804, 46);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(146, 53);
+            this.button27.TabIndex = 2;
+            this.button27.Text = "Hiển thị sách đổi trả thành công";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.btShowListExchangeBookClick);
+            // 
             // button13
             // 
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2390,17 +2520,18 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.BtnAddExchangeBookClick);
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(3, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1100, 705);
-            this.tabControl1.TabIndex = 3;
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Controls.Add(this.tabPage4);
+            this.tabControl.Location = new System.Drawing.Point(3, 2);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1100, 705);
+            this.tabControl.TabIndex = 3;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControlClick);
             // 
             // tabPage1
             // 
@@ -2415,7 +2546,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.tabControl2);
+            this.tabPage2.Controls.Add(this.tabControlOrder);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -2424,22 +2555,23 @@
             this.tabPage2.Text = "Mua sách";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabControl2
+            // tabControlOrder
             // 
-            this.tabControl2.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1100, 662);
-            this.tabControl2.TabIndex = 0;
+            this.tabControlOrder.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControlOrder.Controls.Add(this.tabPage5);
+            this.tabControlOrder.Controls.Add(this.tabPage6);
+            this.tabControlOrder.Location = new System.Drawing.Point(0, 0);
+            this.tabControlOrder.Name = "tabControlOrder";
+            this.tabControlOrder.SelectedIndex = 0;
+            this.tabControlOrder.Size = new System.Drawing.Size(1100, 662);
+            this.tabControlOrder.TabIndex = 0;
+            this.tabControlOrder.SelectedIndexChanged += new System.EventHandler(this.tabControlOrderClick);
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.groupBox14);
             this.tabPage5.Controls.Add(this.groupBox15);
-            this.tabPage5.Controls.Add(this.dataGridView1);
+            this.tabPage5.Controls.Add(this.tblOrder);
             this.tabPage5.Location = new System.Drawing.Point(4, 32);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -2451,10 +2583,10 @@
             // groupBox14
             // 
             this.groupBox14.Controls.Add(this.button14);
-            this.groupBox14.Controls.Add(this.textBox1);
+            this.groupBox14.Controls.Add(this.txtSearchOrder);
             this.groupBox14.Controls.Add(this.label22);
             this.groupBox14.Controls.Add(this.label23);
-            this.groupBox14.Controls.Add(this.comboBox2);
+            this.groupBox14.Controls.Add(this.comboSeachOrder);
             this.groupBox14.Location = new System.Drawing.Point(553, 419);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(533, 210);
@@ -2471,13 +2603,14 @@
             this.button14.TabIndex = 6;
             this.button14.Text = "Tìm kiếm";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.BtnSearchOrderClick);
             // 
-            // textBox1
+            // txtSearchOrder
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 26);
-            this.textBox1.TabIndex = 5;
+            this.txtSearchOrder.Location = new System.Drawing.Point(188, 109);
+            this.txtSearchOrder.Name = "txtSearchOrder";
+            this.txtSearchOrder.Size = new System.Drawing.Size(286, 26);
+            this.txtSearchOrder.TabIndex = 5;
             // 
             // label22
             // 
@@ -2497,18 +2630,16 @@
             this.label23.TabIndex = 1;
             this.label23.Text = "Tiêu chí tìm kiếm:";
             // 
-            // comboBox2
+            // comboSeachOrder
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Tìm theo ngày lập hóa đơn",
-            "Tìm theo tên khách hàng",
-            "Tìm theo trạng thái hóa đơn",
-            "Tìm theo tên nhân viên"});
-            this.comboBox2.Location = new System.Drawing.Point(188, 67);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(286, 28);
-            this.comboBox2.TabIndex = 0;
+            this.comboSeachOrder.FormattingEnabled = true;
+            this.comboSeachOrder.Items.AddRange(new object[] {
+            "Mã đơn hàng",
+            "Tên đơn hàng"});
+            this.comboSeachOrder.Location = new System.Drawing.Point(188, 67);
+            this.comboSeachOrder.Name = "comboSeachOrder";
+            this.comboSeachOrder.Size = new System.Drawing.Size(286, 28);
+            this.comboSeachOrder.TabIndex = 0;
             // 
             // groupBox15
             // 
@@ -2530,6 +2661,7 @@
             this.button15.TabIndex = 1;
             this.button15.Text = "Làm mới";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.btRefeshOrder);
             // 
             // button16
             // 
@@ -2540,37 +2672,39 @@
             this.button16.TabIndex = 0;
             this.button16.Text = "Thêm mới";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.BtnAddNewOrderClick);
             // 
-            // dataGridView1
+            // tblOrder
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblOrder.AllowUserToAddRows = false;
+            this.tblOrder.AllowUserToDeleteRows = false;
+            this.tblOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblOrder.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            this.tblOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn13});
-            this.dataGridView1.Location = new System.Drawing.Point(7, -2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1079, 415);
-            this.dataGridView1.TabIndex = 13;
+            this.tblOrder.Location = new System.Drawing.Point(7, -2);
+            this.tblOrder.Name = "tblOrder";
+            this.tblOrder.RowHeadersWidth = 51;
+            this.tblOrder.Size = new System.Drawing.Size(1079, 415);
+            this.tblOrder.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 48.12835F;
             this.dataGridViewTextBoxColumn1.HeaderText = "Mã ĐH";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -2578,6 +2712,7 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 110.3743F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên ĐH";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -2585,6 +2720,7 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 110.3743F;
             this.dataGridViewTextBoxColumn4.HeaderText = "T.Gian lập ĐH";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -2592,6 +2728,7 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 110.3743F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Tổng thanh toán";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -2599,6 +2736,7 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
+            this.dataGridViewTextBoxColumn5.FillWeight = 110.3743F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Ngày thanh toán";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -2606,6 +2744,7 @@
             // 
             // dataGridViewTextBoxColumn13
             // 
+            this.dataGridViewTextBoxColumn13.FillWeight = 110.3743F;
             this.dataGridViewTextBoxColumn13.HeaderText = "Trạng thái";
             this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
@@ -2613,7 +2752,7 @@
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.dataGridView2);
+            this.tabPage6.Controls.Add(this.tblOrderBill);
             this.tabPage6.Location = new System.Drawing.Point(4, 32);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -2622,79 +2761,41 @@
             this.tabPage6.Text = "Thanh toán";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // tblOrderBill
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblOrderBill.AllowUserToAddRows = false;
+            this.tblOrderBill.AllowUserToDeleteRows = false;
+            this.tblOrderBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblOrderBill.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblOrderBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            this.tblOrderBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblOrderBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16});
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(1089, 431);
-            this.dataGridView2.TabIndex = 14;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Mã ĐH";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Tên ĐH";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "T.Gian lập ĐH";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Tổng thanh toán";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.HeaderText = "Ngày thanh toán";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "Trạng thái";
-            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column41,
+            this.tblOrderEdit});
+            this.tblOrderBill.Location = new System.Drawing.Point(0, 0);
+            this.tblOrderBill.MultiSelect = false;
+            this.tblOrderBill.Name = "tblOrderBill";
+            this.tblOrderBill.RowHeadersWidth = 51;
+            this.tblOrderBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblOrderBill.Size = new System.Drawing.Size(1089, 431);
+            this.tblOrderBill.TabIndex = 14;
+            this.tblOrderBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblOrderCellContentClick);
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.tabControl3);
+            this.tabPage3.Controls.Add(this.tabControlBookPay);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -2703,18 +2804,19 @@
             this.tabPage3.Text = "Bán sách";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabControl3
+            // tabControlBookPay
             // 
-            this.tabControl3.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControl3.Controls.Add(this.tabPage7);
-            this.tabControl3.Controls.Add(this.tabPage8);
-            this.tabControl3.Controls.Add(this.tabPage11);
-            this.tabControl3.Controls.Add(this.tabPage12);
-            this.tabControl3.Location = new System.Drawing.Point(0, 0);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1100, 662);
-            this.tabControl3.TabIndex = 0;
+            this.tabControlBookPay.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControlBookPay.Controls.Add(this.tabPage7);
+            this.tabControlBookPay.Controls.Add(this.tabPage8);
+            this.tabControlBookPay.Controls.Add(this.tabPage11);
+            this.tabControlBookPay.Controls.Add(this.tabPage12);
+            this.tabControlBookPay.Location = new System.Drawing.Point(0, 0);
+            this.tabControlBookPay.Name = "tabControlBookPay";
+            this.tabControlBookPay.SelectedIndex = 0;
+            this.tabControlBookPay.Size = new System.Drawing.Size(1100, 662);
+            this.tabControlBookPay.TabIndex = 0;
+            this.tabControlBookPay.SelectedIndexChanged += new System.EventHandler(this.BookPayClick);
             // 
             // tabPage7
             // 
@@ -2887,14 +2989,14 @@
             this.tblCustomer.AllowUserToDeleteRows = false;
             this.tblCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblCustomer.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.tblCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn17,
@@ -2914,8 +3016,8 @@
             // 
             // dataGridViewTextBoxColumn17
             // 
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle32;
             this.dataGridViewTextBoxColumn17.HeaderText = "Mã KH";
             this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
@@ -2930,8 +3032,8 @@
             // 
             // dataGridViewTextBoxColumn21
             // 
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn21.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn21.DefaultCellStyle = dataGridViewCellStyle33;
             this.dataGridViewTextBoxColumn21.HeaderText = "Ngày sinh";
             this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
@@ -2946,8 +3048,8 @@
             // 
             // dataGridViewTextBoxColumn23
             // 
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn23.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn23.DefaultCellStyle = dataGridViewCellStyle34;
             this.dataGridViewTextBoxColumn23.HeaderText = "Số ĐT";
             this.dataGridViewTextBoxColumn23.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
@@ -2962,8 +3064,8 @@
             // 
             // dataGridViewTextBoxColumn28
             // 
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle35;
             this.dataGridViewTextBoxColumn28.HeaderText = "Ngày tạo TTKH";
             this.dataGridViewTextBoxColumn28.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
@@ -3122,14 +3224,14 @@
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn24,
@@ -3313,14 +3415,14 @@
             this.tblDiscount.AllowUserToDeleteRows = false;
             this.tblDiscount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblDiscount.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblDiscount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblDiscount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.tblDiscount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblDiscount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn43,
@@ -3338,8 +3440,8 @@
             // 
             // dataGridViewTextBoxColumn43
             // 
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn43.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn43.DefaultCellStyle = dataGridViewCellStyle38;
             this.dataGridViewTextBoxColumn43.HeaderText = "Mã KM";
             this.dataGridViewTextBoxColumn43.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
@@ -3354,8 +3456,8 @@
             // 
             // dataGridViewTextBoxColumn45
             // 
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn45.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn45.DefaultCellStyle = dataGridViewCellStyle39;
             this.dataGridViewTextBoxColumn45.HeaderText = "Bắt đầu";
             this.dataGridViewTextBoxColumn45.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
@@ -3363,8 +3465,8 @@
             // 
             // dataGridViewTextBoxColumn46
             // 
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn46.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn46.DefaultCellStyle = dataGridViewCellStyle40;
             this.dataGridViewTextBoxColumn46.HeaderText = "Kết thúc";
             this.dataGridViewTextBoxColumn46.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
@@ -3372,8 +3474,8 @@
             // 
             // dataGridViewTextBoxColumn49
             // 
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn49.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn49.DefaultCellStyle = dataGridViewCellStyle41;
             this.dataGridViewTextBoxColumn49.HeaderText = "Giá trị KM";
             this.dataGridViewTextBoxColumn49.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
@@ -3411,14 +3513,14 @@
             this.dataGridView4.AllowUserToDeleteRows = false;
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn50,
@@ -3477,7 +3579,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.tabControl4);
+            this.tabPage4.Controls.Add(this.tabControlReport);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -3486,18 +3588,19 @@
             this.tabPage4.Text = "Báo cáo thống kê";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // tabControl4
+            // tabControlReport
             // 
-            this.tabControl4.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControl4.Controls.Add(this.tabPage9);
-            this.tabControl4.Controls.Add(this.tabPage10);
-            this.tabControl4.Controls.Add(this.tabPage13);
-            this.tabControl4.Controls.Add(this.tabPage14);
-            this.tabControl4.Location = new System.Drawing.Point(0, 0);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(1100, 662);
-            this.tabControl4.TabIndex = 0;
+            this.tabControlReport.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControlReport.Controls.Add(this.tabPage9);
+            this.tabControlReport.Controls.Add(this.tabPage10);
+            this.tabControlReport.Controls.Add(this.tabPage13);
+            this.tabControlReport.Controls.Add(this.tabPage14);
+            this.tabControlReport.Location = new System.Drawing.Point(0, 0);
+            this.tabControlReport.Name = "tabControlReport";
+            this.tabControlReport.SelectedIndex = 0;
+            this.tabControlReport.Size = new System.Drawing.Size(1100, 662);
+            this.tabControlReport.TabIndex = 0;
+            this.tabControlReport.SelectedIndexChanged += new System.EventHandler(this.ReportClick);
             // 
             // tabPage9
             // 
@@ -3527,14 +3630,14 @@
             this.dataGridView5.AllowUserToDeleteRows = false;
             this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle43;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn32,
@@ -3594,14 +3697,14 @@
             this.dataGridView6.AllowUserToDeleteRows = false;
             this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView6.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn48,
@@ -3714,14 +3817,14 @@
             this.dataGridView7.AllowUserToDeleteRows = false;
             this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView7.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView7.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView7.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle45;
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn59,
@@ -3778,14 +3881,14 @@
             this.dataGridView8.AllowUserToDeleteRows = false;
             this.dataGridView8.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView8.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView8.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView8.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
             this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn63,
@@ -3818,126 +3921,67 @@
             this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
             this.dataGridViewTextBoxColumn66.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // button27
+            // dataGridViewTextBoxColumn6
             // 
-            this.button27.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button27.Location = new System.Drawing.Point(804, 46);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(140, 53);
-            this.button27.TabIndex = 2;
-            this.button27.Text = "Hiển thị sách đổi thành công";
-            this.button27.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Mã ĐH";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // txtSearchExchangeBook
+            // dataGridViewTextBoxColumn7
             // 
-            this.txtSearchExchangeBook.Location = new System.Drawing.Point(180, 47);
-            this.txtSearchExchangeBook.Name = "txtSearchExchangeBook";
-            this.txtSearchExchangeBook.Size = new System.Drawing.Size(203, 26);
-            this.txtSearchExchangeBook.TabIndex = 9;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Tên ĐH";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label33
+            // dataGridViewTextBoxColumn8
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(105, 50);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(80, 20);
-            this.label33.TabIndex = 8;
-            this.label33.Text = "Nội dung:";
+            this.dataGridViewTextBoxColumn8.HeaderText = "T.Gian lập ĐH";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label34
+            // dataGridViewTextBoxColumn14
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(105, 16);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(73, 20);
-            this.label34.TabIndex = 7;
-            this.label34.Text = "Tiêu chí:";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Tổng thanh toán";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // comboSeachExchangeBook
+            // dataGridViewTextBoxColumn15
             // 
-            this.comboSeachExchangeBook.FormattingEnabled = true;
-            this.comboSeachExchangeBook.Items.AddRange(new object[] {
-            "Mã sách",
-            "Tên sách"});
-            this.comboSeachExchangeBook.Location = new System.Drawing.Point(180, 13);
-            this.comboSeachExchangeBook.Name = "comboSeachExchangeBook";
-            this.comboSeachExchangeBook.Size = new System.Drawing.Size(203, 28);
-            this.comboSeachExchangeBook.TabIndex = 6;
+            this.dataGridViewTextBoxColumn15.HeaderText = "Ngày thanh toán";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // button28
+            // Column41
             // 
-            this.button28.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button28.Location = new System.Drawing.Point(534, 46);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(140, 53);
-            this.button28.TabIndex = 10;
-            this.button28.Text = "Làm mới";
-            this.button28.UseVisualStyleBackColor = true;
-            this.button28.Click += new System.EventHandler(this.btRefeshExchangeBook);
+            this.Column41.HeaderText = "Trạng thái";
+            this.Column41.Items.AddRange(new object[] {
+            "Chua thanh toan",
+            "Da thanh toan",
+            "Da huy"});
+            this.Column41.MinimumWidth = 6;
+            this.Column41.Name = "Column41";
             // 
-            // dataGridViewTextBoxColumn34
+            // tblOrderEdit
             // 
-            this.dataGridViewTextBoxColumn34.HeaderText = "Mã sách";
-            this.dataGridViewTextBoxColumn34.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.HeaderText = "Tên sách";
-            this.dataGridViewTextBoxColumn35.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            this.dataGridViewTextBoxColumn35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column40
-            // 
-            this.Column40.HeaderText = "Số lượng";
-            this.Column40.MinimumWidth = 6;
-            this.Column40.Name = "Column40";
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.HeaderText = "Lý do cần đổi";
-            this.dataGridViewTextBoxColumn36.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.HeaderText = "Trạng thái";
-            this.dataGridViewTextBoxColumn37.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            this.dataGridViewTextBoxColumn37.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn37.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column43
-            // 
-            this.Column43.HeaderText = "Ngày đổi trả";
-            this.Column43.MinimumWidth = 6;
-            this.Column43.Name = "Column43";
-            // 
-            // Column44
-            // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column44.DefaultCellStyle = dataGridViewCellStyle26;
-            this.Column44.HeaderText = "Ngày đổi thành công";
-            this.Column44.MinimumWidth = 6;
-            this.Column44.Name = "Column44";
-            // 
-            // tblExchangeBookEdit
-            // 
-            this.tblExchangeBookEdit.HeaderText = "Sửa";
-            this.tblExchangeBookEdit.MinimumWidth = 6;
-            this.tblExchangeBookEdit.Name = "tblExchangeBookEdit";
-            this.tblExchangeBookEdit.Text = "Sửa";
-            this.tblExchangeBookEdit.UseColumnTextForButtonValue = true;
+            this.tblOrderEdit.HeaderText = "Sửa";
+            this.tblOrderEdit.MinimumWidth = 6;
+            this.tblOrderEdit.Name = "tblOrderEdit";
+            this.tblOrderEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblOrderEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.tblOrderEdit.Text = "Sửa";
+            this.tblOrderEdit.UseColumnTextForButtonValue = true;
             // 
             // HomeFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1104, 704);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -3983,19 +4027,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblExchangeBook)).EndInit();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
+            this.tabControlOrder.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.groupBox15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblOrder)).EndInit();
             this.tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblOrderBill)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
+            this.tabControlBookPay.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
@@ -4016,7 +4060,7 @@
             this.tabPage12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
+            this.tabControlReport.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
@@ -4206,47 +4250,35 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewButtonColumn tblAuthorEdit;
         private System.Windows.Forms.DataGridViewButtonColumn tblAuthorRemove;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl tabControlOrder;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabControl tabControlBookPay;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.TabPage tabPage12;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabControl tabControlReport;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.TabPage tabPage14;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearchOrder;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboSeachOrder;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridView tblOrder;
+        private System.Windows.Forms.DataGridView tblOrderBill;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.TextBox textBox2;
@@ -4359,6 +4391,7 @@
         private System.Windows.Forms.ComboBox comboSeachExchangeBook;
         private System.Windows.Forms.TextBox txtSearchExchangeBook;
         private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idExchangeBook;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column40;
@@ -4367,6 +4400,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column43;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column44;
         private System.Windows.Forms.DataGridViewButtonColumn tblExchangeBookEdit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column41;
+        private System.Windows.Forms.DataGridViewButtonColumn tblOrderEdit;
     }
 }
 
