@@ -1,4 +1,6 @@
 ﻿using ADC;
+
+
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,6 +23,8 @@ namespace ADCBookApp
         public List<Book> books;
         public List<ExchangeBook> exchangeBooks;
         public List<Order> orders;
+        public List<Custommer> custommers;
+        public List<Discount> discounts;
         public HomeFrm()
         {
             InitializeComponent();
@@ -116,6 +120,36 @@ namespace ADCBookApp
                 }
                 order.StatusOrder = table.Rows[i]["StatusOrder"].ToString();
                 orderList.Add(order);
+            }
+        }
+
+        public static void ConvertDataTableCustommer(List<Custommer> custommerList, DataTable table)
+        {
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                Custommer custommer = new Custommer();
+                custommer.idCustommer = Convert.ToInt32(table.Rows[i]["idCustommer"]);
+                custommer.nameCustommer = table.Rows[i]["nameCustommer"].ToString();
+                custommer.BirstDay = DateTime.Parse(table.Rows[i]["BirstDay"].ToString());
+                custommer.Address = table.Rows[i]["Address"].ToString();
+                custommer.phoneNumber = table.Rows[i]["phoneNumber"].ToString();
+                custommer.Email = table.Rows[i]["Email"].ToString();
+                custommer.CreateAccount = DateTime.Parse(table.Rows[i]["CreateAccount"].ToString());
+                custommerList.Add(custommer);
+            }
+        }
+
+        public static void ConvertDataTableDiscount(List<Discount> discountList, DataTable table)
+        {
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                Discount discount = new Discount();
+                discount.idDiscount = Convert.ToInt32(table.Rows[i]["idDiscount"]);
+                discount.nameDiscount = table.Rows[i]["nameDiscount"].ToString();
+                discount.StartDiscountDate = DateTime.Parse(table.Rows[i]["StartDiscountDate"].ToString());
+                discount.EndDiscountDate = DateTime.Parse(table.Rows[i]["EndDiscountDate"].ToString());
+                discount.DiscountValue = Convert.ToInt32(table.Rows[i]["DiscountValue"]);
+                discountList.Add(discount);
             }
         }
 
@@ -334,6 +368,48 @@ namespace ADCBookApp
             }
         }
 
+        public void ShowCustommer()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM Custommer";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            custommers = new List<Custommer>();
+            tblCustommer.Rows.Clear();
+            ConvertDataTableCustommer(custommers, table);
+            foreach (Custommer i in custommers)
+            {
+                tblCustommer.Rows.Add(new object[]
+                {
+                    i.idCustommer, i.nameCustommer, i.BirstDay, i.Address, i.phoneNumber, i.Email, i.CreateAccount
+                });
+            }
+        }
+
+        public void ShowDiscount()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM Discount";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            discounts = new List<Discount>();
+            tblDiscount.Rows.Clear();
+            ConvertDataTableDiscount(discounts, table);
+            foreach (Discount i in discounts)
+            {
+                tblDiscount.Rows.Add(new object[]
+                {
+                    i.idDiscount, i.nameDiscount, i.StartDiscountDate, i.EndDiscountDate, i.DiscountValue
+                });
+            }
+        }
+
         private void HomeFrm_Load(object sender, EventArgs e)
         {
             ShowCompany();
@@ -408,7 +484,6 @@ namespace ADCBookApp
 
         public void UpdateBook(Book updateBook)
         {
-            var newBook = updateBook as Book;
             connection = new SqlConnection(str);
             connection.Open();
             command = connection.CreateCommand();
@@ -455,6 +530,30 @@ namespace ADCBookApp
                 adapter.Fill(table);
                 ShowExchangeBook();
             }
+        }
+
+        public void UpdateCustommer(Custommer updateCustommer)
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "UPDATE Custommer SET nameCustommer = N'" + updateCustommer.nameCustommer + "', BirstDay = '" + updateCustommer.BirstDay + "', [Address] = N'" + updateCustommer.Address + "', phoneNumber = N'" + updateCustommer.phoneNumber + "', Email = N'" + updateCustommer.Email + "' WHERE idCustommer = " + updateCustommer.idCustommer + ";";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            ShowCustommer();
+        }
+
+        public void UpdateDiscount(Discount updateDiscount)
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "UPDATE Discount SET nameDiscount = N'" + updateDiscount.nameDiscount + "', StartDiscountDate = '" + updateDiscount.StartDiscountDate + "', EndDiscountDate = '" + updateDiscount.EndDiscountDate + "', DiscountValue = " + updateDiscount.DiscountValue + " WHERE idDiscount = " + updateDiscount.idDiscount + ";";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            ShowDiscount();
         }
 
         private void tblCompanyCellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -593,26 +692,86 @@ namespace ADCBookApp
                 Order order = new Order();
                 order.idOrder = Int32.Parse(tblOrderBill.Rows[tblOrderBill.CurrentRow.Index].Cells[0].Value.ToString());
                 order.StatusOrder = tblOrderBill.Rows[tblOrderBill.CurrentRow.Index].Cells[5].Value.ToString();
-
-                connection = new SqlConnection(str);
-                connection.Open();
-                command = connection.CreateCommand();
-                command.CommandText = "UPDATE [Order] SET [Order].StatusOrder = N'" + order.StatusOrder + "' WHERE [Order].idOrder = " + order.idOrder + "";
-                adapter.SelectCommand = command;
-                table.Clear();
-                adapter.Fill(table);
-                orders = new List<Order>();
-                tblOrderBill.Rows.Clear();
-                ConvertDataTableOrder(orders, table);
-                foreach (Order i in orders)
+                if (order.StatusOrder != "Chua thanh toan")
                 {
-                    tblOrderBill.Rows.Add(new object[]
+                    connection = new SqlConnection(str);
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = "UPDATE [Order] SET [Order].StatusOrder = N'" + order.StatusOrder + "', [Order].BillDate = '" + DateTime.Now + "' WHERE [Order].idOrder = " + order.idOrder + "";
+                    adapter.SelectCommand = command;
+                    table.Clear();
+                    adapter.Fill(table);
+                    orders = new List<Order>();
+                    tblOrderBill.Rows.Clear();
+                    ConvertDataTableOrder(orders, table);
+                    foreach (Order i in orders)
                     {
+                        tblOrderBill.Rows.Add(new object[]
+                        {
                     i.idOrder, i.nameOrder, i.CreateDateOrder, i.BillTotal, i.BillDate.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.BillDate.ToString(), i.StatusOrder
-                    });
+                        });
+                    }
+                    ShowOrderBill();
+                    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                ShowOrderBill();
-                MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void tblCustommerCellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblCustommer.Columns["tblCustommerEdit"].Index)
+            {
+                Custommer custommer = custommers[e.RowIndex];
+                var updateCustommerView = new AddEditCustommerFrm(custommer);
+                updateCustommerView.Show();
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex == tblCustommer.Columns["tblCustommerRemove"].Index)
+            {
+                Custommer custommer = custommers[e.RowIndex];
+                var title = "Xác nhận xóa";
+                var msg = "Bạn có chắc chắn muốn xóa bản ghi này không?";
+                var ans = ShowConfirmDialog(msg, title);
+                if (ans == DialogResult.Yes)
+                {
+                    connection = new SqlConnection(str);
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = "DELETE FROM Custommer WHERE idCustommer = " + custommer.idCustommer + ";";
+                    adapter.SelectCommand = command;
+                    table.Clear();
+                    adapter.Fill(table);
+                    ShowCustommer();
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void tblDiscountCellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblDiscount.Columns["tblDiscountEdit"].Index)
+            {
+                Discount discount = discounts[e.RowIndex];
+                var updateDiscountView = new AddEditDiscountFrm(discount);
+                updateDiscountView.Show();
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex == tblDiscount.Columns["tblDiscountRemove"].Index)
+            {
+                Discount discount = discounts[e.RowIndex];
+                var title = "Xác nhận xóa";
+                var msg = "Bạn có chắc chắn muốn xóa bản ghi này không?";
+                var ans = ShowConfirmDialog(msg, title);
+                if (ans == DialogResult.Yes)
+                {
+                    connection = new SqlConnection(str);
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = "DELETE FROM Discount WHERE idDiscount = " + discount.idDiscount + ";";
+                    adapter.SelectCommand = command;
+                    table.Clear();
+                    adapter.Fill(table);
+                    ShowDiscount();
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -651,6 +810,23 @@ namespace ADCBookApp
             childView.Show();
         }
 
+        private void BtnAddNewCustommerClick(object sender, EventArgs e)
+        {
+            var childView = new AddEditCustommerFrm();
+            childView.Show();
+        }
+
+        private void BtnAddNewDiscountClick(object sender, EventArgs e)
+        {
+            var childView = new AddEditDiscountFrm();
+            childView.Show();
+        }
+
+        private void BtnAddNewBillClick_Click(object sender, EventArgs e)
+        {
+            new AddEditBillFrm().Show();
+        }
+
         private void btRefeshCompany(object sender, EventArgs e)
         {
             ShowCompany();
@@ -679,6 +855,16 @@ namespace ADCBookApp
         private void btRefeshOrder(object sender, EventArgs e)
         {
             ShowOrder();
+        }
+
+        private void btRefeshCustommer(object sender, EventArgs e)
+        {
+            ShowCustommer();
+        }
+
+        private void btRefeshDiscount(object sender, EventArgs e)
+        {
+            ShowDiscount();
         }
 
         private void SortCompany(object sender, EventArgs e)
@@ -902,6 +1088,51 @@ namespace ADCBookApp
             connection.Close();
         }
 
+        private void SortCustommer(object sender, EventArgs e)
+        {
+            if (sortIdCustommerDESC.Equals(sender))
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM Custommer ORDER BY idCustommer DESC;";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                custommers = new List<Custommer>();
+                tblCustommer.Rows.Clear();
+                ConvertDataTableCustommer(custommers, table);
+                foreach (Custommer i in custommers)
+                {
+                    tblCustommer.Rows.Add(new object[]
+                    {
+                    i.idCustommer, i.nameCustommer, i.BirstDay, i.Address, i.phoneNumber, i.Email, i.CreateAccount
+                    });
+                }
+            }
+            if (sortNameCustommerASC.Equals(sender))
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM Custommer ORDER BY nameCustommer ASC;";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                custommers = new List<Custommer>();
+                tblCustommer.Rows.Clear();
+                ConvertDataTableCustommer(custommers, table);
+                foreach (Custommer i in custommers)
+                {
+                    tblCustommer.Rows.Add(new object[]
+                    {
+                    i.idCustommer, i.nameCustommer, i.BirstDay, i.Address, i.phoneNumber, i.Email, i.CreateAccount
+                    });
+                }
+            }
+            connection.Close();
+        }
+
         private void ShowSearchedCompany(List<Company> companies)
         {
             foreach (Company i in companies)
@@ -953,6 +1184,28 @@ namespace ADCBookApp
                 tblOrder.Rows.Add(new object[]
                 {
                     i.idOrder, i.nameOrder, i.CreateDateOrder, i.BillTotal, i.BillDate.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.BillDate.ToString(), i.StatusOrder
+                });
+            }
+        }
+
+        private void ShowSearchedCustommer(List<Custommer> custommers)
+        {
+            foreach (Custommer i in custommers)
+            {
+                tblCustommer.Rows.Add(new object[]
+                {
+                    i.idCustommer, i.nameCustommer, i.BirstDay, i.Address, i.phoneNumber, i.Email, i.CreateAccount
+                });
+            }
+        }
+
+        private void ShowSearchedDiscount(List<Discount> discounts)
+        {
+            foreach (Discount i in discounts)
+            {
+                tblDiscount.Rows.Add(new object[]
+                {
+                    i.idDiscount, i.nameDiscount, i.StartDiscountDate, i.EndDiscountDate, i.DiscountValue
                 });
             }
         }
@@ -1325,6 +1578,60 @@ namespace ADCBookApp
             }
         }
 
+        private void BtnSearchCustommerClick(object sender, EventArgs e)
+        {
+            var key = txtSearchCustommer.Text;
+            tblCustommer.Rows.Clear();
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+
+            if (comboSeachCustommer.SelectedIndex == -1)
+            {
+                var msg = "Vui lòng chọn tiêu chí tìm kiếm để tiếp tục";
+                var title = "Lỗi dữ liệu";
+                MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (comboSeachCustommer.SelectedIndex == 0)
+            {
+                command.CommandText = "SELECT * FROM [Order] WHERE [Order].idOrder = " + key + ";";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                custommers = new List<Custommer>();
+                ConvertDataTableCustommer(custommers, table);
+                if (custommers.Count == 0)
+                {
+                    var msg = "Không tìm thấy kết quả nào.";
+                    var title = "Kết quả tìm kiếm";
+                    MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ShowSearchedCustommer(custommers);
+                }
+            }
+            else if (comboSeachCustommer.SelectedIndex == 1)
+            {
+                command.CommandText = "SELECT * FROM [Order] WHERE [Order].idOrder LIKE " + key + ";";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                custommers = new List<Custommer>();
+                ConvertDataTableCustommer(custommers, table);
+                if (custommers.Count == 0)
+                {
+                    var msg = "Không tìm thấy kết quả nào.";
+                    var title = "Kết quả tìm kiếm";
+                    MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ShowSearchedCustommer(custommers);
+                }
+            }
+        }
+
         private void tabControlClick(object sender, EventArgs e)
         {
             if (tabControl.SelectedIndex == 0)
@@ -1365,7 +1672,7 @@ namespace ADCBookApp
         {
             if (tabControlBookPay.SelectedIndex == 0)
             {
-
+                ShowCustommer();
             }
             else if (tabControlBookPay.SelectedIndex == 1)
             {
@@ -1373,7 +1680,7 @@ namespace ADCBookApp
             }
             else if (tabControlBookPay.SelectedIndex == 2)
             {
-
+                ShowDiscount();
             }
             else
             {

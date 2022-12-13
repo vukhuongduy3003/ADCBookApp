@@ -298,24 +298,29 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tblOrderBill = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column41 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tblOrderEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControlBookPay = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.button17 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSearchCustommer = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboSeachCustommer = new System.Windows.Forms.ComboBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.sortNameCustommerASC = new System.Windows.Forms.RadioButton();
+            this.sortIdCustommerDESC = new System.Windows.Forms.RadioButton();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
-            this.tblCustomer = new System.Windows.Forms.DataGridView();
+            this.tblCustommer = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -323,8 +328,8 @@
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tblCustommerEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tblCustommerRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -336,8 +341,8 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.BtnAddNewBillClick = new System.Windows.Forms.Button();
+            this.tblBill = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -347,12 +352,6 @@
             this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.groupBox21 = new System.Windows.Forms.GroupBox();
-            this.button23 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.button24 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
@@ -362,8 +361,8 @@
             this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tblDiscountEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tblDiscountRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -403,13 +402,6 @@
             this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column41 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tblOrderEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudStat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemTo)).BeginInit();
@@ -453,13 +445,12 @@
             this.groupBox16.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblCustommer)).BeginInit();
             this.tabPage8.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblBill)).BeginInit();
             this.tabPage11.SuspendLayout();
-            this.groupBox21.SuspendLayout();
             this.groupBox22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblDiscount)).BeginInit();
             this.tabPage12.SuspendLayout();
@@ -2793,6 +2784,61 @@
             this.tblOrderBill.TabIndex = 14;
             this.tblOrderBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblOrderCellContentClick);
             // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Mã ĐH";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Tên ĐH";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "T.Gian lập ĐH";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "Tổng thanh toán";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.HeaderText = "Ngày thanh toán";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column41
+            // 
+            this.Column41.HeaderText = "Trạng thái";
+            this.Column41.Items.AddRange(new object[] {
+            "Chua thanh toan",
+            "Da thanh toan",
+            "Da huy"});
+            this.Column41.MinimumWidth = 6;
+            this.Column41.Name = "Column41";
+            // 
+            // tblOrderEdit
+            // 
+            this.tblOrderEdit.HeaderText = "Sửa";
+            this.tblOrderEdit.MinimumWidth = 6;
+            this.tblOrderEdit.Name = "tblOrderEdit";
+            this.tblOrderEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblOrderEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.tblOrderEdit.Text = "Sửa";
+            this.tblOrderEdit.UseColumnTextForButtonValue = true;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.tabControlBookPay);
@@ -2823,7 +2869,7 @@
             this.tabPage7.Controls.Add(this.groupBox16);
             this.tabPage7.Controls.Add(this.groupBox17);
             this.tabPage7.Controls.Add(this.groupBox18);
-            this.tabPage7.Controls.Add(this.tblCustomer);
+            this.tabPage7.Controls.Add(this.tblCustommer);
             this.tabPage7.Location = new System.Drawing.Point(4, 32);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
@@ -2835,10 +2881,10 @@
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.button17);
-            this.groupBox16.Controls.Add(this.textBox2);
+            this.groupBox16.Controls.Add(this.txtSearchCustommer);
             this.groupBox16.Controls.Add(this.label21);
             this.groupBox16.Controls.Add(this.label24);
-            this.groupBox16.Controls.Add(this.comboBox1);
+            this.groupBox16.Controls.Add(this.comboSeachCustommer);
             this.groupBox16.Location = new System.Drawing.Point(765, 419);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(321, 209);
@@ -2855,13 +2901,14 @@
             this.button17.TabIndex = 6;
             this.button17.Text = "Tìm kiếm";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.BtnSearchCustommerClick);
             // 
-            // textBox2
+            // txtSearchCustommer
             // 
-            this.textBox2.Location = new System.Drawing.Point(96, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 26);
-            this.textBox2.TabIndex = 5;
+            this.txtSearchCustommer.Location = new System.Drawing.Point(96, 84);
+            this.txtSearchCustommer.Name = "txtSearchCustommer";
+            this.txtSearchCustommer.Size = new System.Drawing.Size(203, 26);
+            this.txtSearchCustommer.TabIndex = 5;
             // 
             // label21
             // 
@@ -2881,26 +2928,21 @@
             this.label24.TabIndex = 1;
             this.label24.Text = "Tiêu chí:";
             // 
-            // comboBox1
+            // comboSeachCustommer
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Tên khách hàng",
-            "Mã khách hàng.",
-            "Loại khách hàng.",
-            "Địa chỉ.",
-            "Số điện thoại."});
-            this.comboBox1.Location = new System.Drawing.Point(96, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(203, 28);
-            this.comboBox1.TabIndex = 0;
+            this.comboSeachCustommer.FormattingEnabled = true;
+            this.comboSeachCustommer.Items.AddRange(new object[] {
+            "Mã khách hàng",
+            "Tên khách hàng"});
+            this.comboSeachCustommer.Location = new System.Drawing.Point(96, 41);
+            this.comboSeachCustommer.Name = "comboSeachCustommer";
+            this.comboSeachCustommer.Size = new System.Drawing.Size(203, 28);
+            this.comboSeachCustommer.TabIndex = 0;
             // 
             // groupBox17
             // 
-            this.groupBox17.Controls.Add(this.radioButton1);
-            this.groupBox17.Controls.Add(this.radioButton2);
-            this.groupBox17.Controls.Add(this.radioButton5);
-            this.groupBox17.Controls.Add(this.radioButton7);
+            this.groupBox17.Controls.Add(this.sortNameCustommerASC);
+            this.groupBox17.Controls.Add(this.sortIdCustommerDESC);
             this.groupBox17.Location = new System.Drawing.Point(350, 419);
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.Size = new System.Drawing.Size(409, 209);
@@ -2908,49 +2950,29 @@
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Sắp xếp theo";
             // 
-            // radioButton1
+            // sortNameCustommerASC
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(217, 45);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(150, 24);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Khách hàng mới";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.sortNameCustommerASC.AutoSize = true;
+            this.sortNameCustommerASC.Location = new System.Drawing.Point(18, 83);
+            this.sortNameCustommerASC.Name = "sortNameCustommerASC";
+            this.sortNameCustommerASC.Size = new System.Drawing.Size(217, 24);
+            this.sortNameCustommerASC.TabIndex = 1;
+            this.sortNameCustommerASC.TabStop = true;
+            this.sortNameCustommerASC.Text = "Tên khách hàng tăng dần";
+            this.sortNameCustommerASC.UseVisualStyleBackColor = true;
+            this.sortNameCustommerASC.CheckedChanged += new System.EventHandler(this.SortCustommer);
             // 
-            // radioButton2
+            // sortIdCustommerDESC
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(217, 94);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(221, 24);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Tên khách hàng giảm dần";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(19, 94);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(217, 24);
-            this.radioButton5.TabIndex = 1;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Tên khách hàng tăng dần";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(19, 45);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(216, 24);
-            this.radioButton7.TabIndex = 0;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Mã khách hàng giảm dần";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.sortIdCustommerDESC.AutoSize = true;
+            this.sortIdCustommerDESC.Location = new System.Drawing.Point(19, 45);
+            this.sortIdCustommerDESC.Name = "sortIdCustommerDESC";
+            this.sortIdCustommerDESC.Size = new System.Drawing.Size(216, 24);
+            this.sortIdCustommerDESC.TabIndex = 0;
+            this.sortIdCustommerDESC.TabStop = true;
+            this.sortIdCustommerDESC.Text = "Mã khách hàng giảm dần";
+            this.sortIdCustommerDESC.UseVisualStyleBackColor = true;
+            this.sortIdCustommerDESC.CheckedChanged += new System.EventHandler(this.SortCustommer);
             // 
             // groupBox18
             // 
@@ -2972,6 +2994,7 @@
             this.button18.TabIndex = 1;
             this.button18.Text = "Làm mới";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.btRefeshCustommer);
             // 
             // button19
             // 
@@ -2982,13 +3005,14 @@
             this.button19.TabIndex = 0;
             this.button19.Text = "Thêm mới";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.BtnAddNewCustommerClick);
             // 
-            // tblCustomer
+            // tblCustommer
             // 
-            this.tblCustomer.AllowUserToAddRows = false;
-            this.tblCustomer.AllowUserToDeleteRows = false;
-            this.tblCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblCustomer.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.tblCustommer.AllowUserToAddRows = false;
+            this.tblCustommer.AllowUserToDeleteRows = false;
+            this.tblCustommer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblCustommer.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2996,9 +3020,9 @@
             dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
-            this.tblCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tblCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblCustommer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            this.tblCustommer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblCustommer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn21,
@@ -3006,13 +3030,14 @@
             this.dataGridViewTextBoxColumn23,
             this.dataGridViewTextBoxColumn31,
             this.dataGridViewTextBoxColumn28,
-            this.dataGridViewButtonColumn1,
-            this.dataGridViewButtonColumn2});
-            this.tblCustomer.Location = new System.Drawing.Point(7, -2);
-            this.tblCustomer.Name = "tblCustomer";
-            this.tblCustomer.RowHeadersWidth = 51;
-            this.tblCustomer.Size = new System.Drawing.Size(1079, 415);
-            this.tblCustomer.TabIndex = 7;
+            this.tblCustommerEdit,
+            this.tblCustommerRemove});
+            this.tblCustommer.Location = new System.Drawing.Point(7, -2);
+            this.tblCustommer.Name = "tblCustommer";
+            this.tblCustommer.RowHeadersWidth = 51;
+            this.tblCustommer.Size = new System.Drawing.Size(1079, 415);
+            this.tblCustommer.TabIndex = 7;
+            this.tblCustommer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblCustommerCellContentClick);
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -3071,27 +3096,27 @@
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             this.dataGridViewTextBoxColumn28.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewButtonColumn1
+            // tblCustommerEdit
             // 
-            this.dataGridViewButtonColumn1.HeaderText = "Sửa";
-            this.dataGridViewButtonColumn1.MinimumWidth = 6;
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.Text = "Sửa";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            this.tblCustommerEdit.HeaderText = "Sửa";
+            this.tblCustommerEdit.MinimumWidth = 6;
+            this.tblCustommerEdit.Name = "tblCustommerEdit";
+            this.tblCustommerEdit.Text = "Sửa";
+            this.tblCustommerEdit.UseColumnTextForButtonValue = true;
             // 
-            // dataGridViewButtonColumn2
+            // tblCustommerRemove
             // 
-            this.dataGridViewButtonColumn2.HeaderText = "Xóa";
-            this.dataGridViewButtonColumn2.MinimumWidth = 6;
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.Text = "Xóa";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+            this.tblCustommerRemove.HeaderText = "Xóa";
+            this.tblCustommerRemove.MinimumWidth = 6;
+            this.tblCustommerRemove.Name = "tblCustommerRemove";
+            this.tblCustommerRemove.Text = "Xóa";
+            this.tblCustommerRemove.UseColumnTextForButtonValue = true;
             // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.groupBox19);
             this.tabPage8.Controls.Add(this.groupBox20);
-            this.tabPage8.Controls.Add(this.dataGridView3);
+            this.tabPage8.Controls.Add(this.tblBill);
             this.tabPage8.Location = new System.Drawing.Point(4, 32);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
@@ -3190,7 +3215,7 @@
             // groupBox20
             // 
             this.groupBox20.Controls.Add(this.button21);
-            this.groupBox20.Controls.Add(this.button22);
+            this.groupBox20.Controls.Add(this.BtnAddNewBillClick);
             this.groupBox20.Location = new System.Drawing.Point(7, 419);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Size = new System.Drawing.Size(540, 210);
@@ -3208,22 +3233,23 @@
             this.button21.Text = "Làm mới";
             this.button21.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // BtnAddNewBillClick
             // 
-            this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button22.Location = new System.Drawing.Point(66, 84);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(191, 43);
-            this.button22.TabIndex = 0;
-            this.button22.Text = "Thêm mới";
-            this.button22.UseVisualStyleBackColor = true;
+            this.BtnAddNewBillClick.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnAddNewBillClick.Location = new System.Drawing.Point(66, 84);
+            this.BtnAddNewBillClick.Name = "BtnAddNewBillClick";
+            this.BtnAddNewBillClick.Size = new System.Drawing.Size(191, 43);
+            this.BtnAddNewBillClick.TabIndex = 0;
+            this.BtnAddNewBillClick.Text = "Thêm mới";
+            this.BtnAddNewBillClick.UseVisualStyleBackColor = true;
+            this.BtnAddNewBillClick.Click += new System.EventHandler(this.BtnAddNewBillClick_Click);
             // 
-            // dataGridView3
+            // tblBill
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.tblBill.AllowUserToAddRows = false;
+            this.tblBill.AllowUserToDeleteRows = false;
+            this.tblBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblBill.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3231,9 +3257,9 @@
             dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle36;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            this.tblBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn24,
             this.dataGridViewTextBoxColumn27,
             this.dataGridViewTextBoxColumn33,
@@ -3242,11 +3268,11 @@
             this.dataGridViewTextBoxColumn41,
             this.dataGridViewTextBoxColumn42,
             this.dataGridViewButtonColumn3});
-            this.dataGridView3.Location = new System.Drawing.Point(7, -2);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.Size = new System.Drawing.Size(1079, 415);
-            this.dataGridView3.TabIndex = 13;
+            this.tblBill.Location = new System.Drawing.Point(7, -2);
+            this.tblBill.Name = "tblBill";
+            this.tblBill.RowHeadersWidth = 51;
+            this.tblBill.Size = new System.Drawing.Size(1079, 415);
+            this.tblBill.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn24
             // 
@@ -3307,7 +3333,6 @@
             // 
             // tabPage11
             // 
-            this.tabPage11.Controls.Add(this.groupBox21);
             this.tabPage11.Controls.Add(this.groupBox22);
             this.tabPage11.Controls.Add(this.tblDiscount);
             this.tabPage11.Location = new System.Drawing.Point(4, 32);
@@ -3317,74 +3342,13 @@
             this.tabPage11.Text = "Khuyến mãi";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
-            // groupBox21
-            // 
-            this.groupBox21.Controls.Add(this.button23);
-            this.groupBox21.Controls.Add(this.textBox5);
-            this.groupBox21.Controls.Add(this.label28);
-            this.groupBox21.Controls.Add(this.label29);
-            this.groupBox21.Controls.Add(this.comboBox6);
-            this.groupBox21.Location = new System.Drawing.Point(553, 419);
-            this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(533, 210);
-            this.groupBox21.TabIndex = 12;
-            this.groupBox21.TabStop = false;
-            this.groupBox21.Text = "Tìm kiếm";
-            // 
-            // button23
-            // 
-            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.Location = new System.Drawing.Point(174, 131);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(185, 38);
-            this.button23.TabIndex = 6;
-            this.button23.Text = "Tìm kiếm";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(161, 85);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(286, 26);
-            this.textBox5.TabIndex = 5;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(86, 88);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(80, 20);
-            this.label28.TabIndex = 2;
-            this.label28.Text = "Nội dung:";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(86, 45);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(73, 20);
-            this.label29.TabIndex = 1;
-            this.label29.Text = "Tiêu chí:";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "Theo ngày bắt đầu",
-            "Theo ngày kết thúc",
-            "Theo tên khuyến mãi"});
-            this.comboBox6.Location = new System.Drawing.Point(161, 42);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(286, 28);
-            this.comboBox6.TabIndex = 0;
-            // 
             // groupBox22
             // 
             this.groupBox22.Controls.Add(this.button24);
             this.groupBox22.Controls.Add(this.button25);
             this.groupBox22.Location = new System.Drawing.Point(7, 419);
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(540, 210);
+            this.groupBox22.Size = new System.Drawing.Size(1079, 210);
             this.groupBox22.TabIndex = 11;
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Hành động";
@@ -3392,22 +3356,24 @@
             // button24
             // 
             this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button24.Location = new System.Drawing.Point(283, 84);
+            this.button24.Location = new System.Drawing.Point(520, 79);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(191, 43);
             this.button24.TabIndex = 1;
             this.button24.Text = "Làm mới";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.btRefeshDiscount);
             // 
             // button25
             // 
             this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button25.Location = new System.Drawing.Point(66, 84);
+            this.button25.Location = new System.Drawing.Point(303, 79);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(191, 43);
             this.button25.TabIndex = 0;
             this.button25.Text = "Thêm mới";
             this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.BtnAddNewDiscountClick);
             // 
             // tblDiscount
             // 
@@ -3430,13 +3396,14 @@
             this.dataGridViewTextBoxColumn45,
             this.dataGridViewTextBoxColumn46,
             this.dataGridViewTextBoxColumn49,
-            this.dataGridViewButtonColumn4,
-            this.dataGridViewButtonColumn7});
+            this.tblDiscountEdit,
+            this.tblDiscountRemove});
             this.tblDiscount.Location = new System.Drawing.Point(7, -2);
             this.tblDiscount.Name = "tblDiscount";
             this.tblDiscount.RowHeadersWidth = 51;
             this.tblDiscount.Size = new System.Drawing.Size(1079, 415);
             this.tblDiscount.TabIndex = 10;
+            this.tblDiscount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblDiscountCellContentClick);
             // 
             // dataGridViewTextBoxColumn43
             // 
@@ -3481,21 +3448,21 @@
             this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
             this.dataGridViewTextBoxColumn49.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewButtonColumn4
+            // tblDiscountEdit
             // 
-            this.dataGridViewButtonColumn4.HeaderText = "Sửa";
-            this.dataGridViewButtonColumn4.MinimumWidth = 6;
-            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-            this.dataGridViewButtonColumn4.Text = "Sửa";
-            this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
+            this.tblDiscountEdit.HeaderText = "Sửa";
+            this.tblDiscountEdit.MinimumWidth = 6;
+            this.tblDiscountEdit.Name = "tblDiscountEdit";
+            this.tblDiscountEdit.Text = "Sửa";
+            this.tblDiscountEdit.UseColumnTextForButtonValue = true;
             // 
-            // dataGridViewButtonColumn7
+            // tblDiscountRemove
             // 
-            this.dataGridViewButtonColumn7.HeaderText = "Xóa";
-            this.dataGridViewButtonColumn7.MinimumWidth = 6;
-            this.dataGridViewButtonColumn7.Name = "dataGridViewButtonColumn7";
-            this.dataGridViewButtonColumn7.Text = "Xóa";
-            this.dataGridViewButtonColumn7.UseColumnTextForButtonValue = true;
+            this.tblDiscountRemove.HeaderText = "Xóa";
+            this.tblDiscountRemove.MinimumWidth = 6;
+            this.tblDiscountRemove.Name = "tblDiscountRemove";
+            this.tblDiscountRemove.Text = "Xóa";
+            this.tblDiscountRemove.UseColumnTextForButtonValue = true;
             // 
             // tabPage12
             // 
@@ -3921,61 +3888,6 @@
             this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
             this.dataGridViewTextBoxColumn66.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Mã ĐH";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Tên ĐH";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "T.Gian lập ĐH";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Tổng thanh toán";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.HeaderText = "Ngày thanh toán";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column41
-            // 
-            this.Column41.HeaderText = "Trạng thái";
-            this.Column41.Items.AddRange(new object[] {
-            "Chua thanh toan",
-            "Da thanh toan",
-            "Da huy"});
-            this.Column41.MinimumWidth = 6;
-            this.Column41.Name = "Column41";
-            // 
-            // tblOrderEdit
-            // 
-            this.tblOrderEdit.HeaderText = "Sửa";
-            this.tblOrderEdit.MinimumWidth = 6;
-            this.tblOrderEdit.Name = "tblOrderEdit";
-            this.tblOrderEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblOrderEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.tblOrderEdit.Text = "Sửa";
-            this.tblOrderEdit.UseColumnTextForButtonValue = true;
-            // 
             // HomeFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -4046,15 +3958,13 @@
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             this.groupBox18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblCustommer)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
             this.groupBox20.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblBill)).EndInit();
             this.tabPage11.ResumeLayout(false);
-            this.groupBox21.ResumeLayout(false);
-            this.groupBox21.PerformLayout();
             this.groupBox22.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblDiscount)).EndInit();
             this.tabPage12.ResumeLayout(false);
@@ -4281,28 +4191,17 @@
         private System.Windows.Forms.DataGridView tblOrderBill;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSearchCustommer;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboSeachCustommer;
         private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton sortNameCustommerASC;
+        private System.Windows.Forms.RadioButton sortIdCustommerDESC;
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.DataGridView tblCustomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.DataGridView tblCustommer;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox comboBox3;
@@ -4313,14 +4212,8 @@
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.GroupBox groupBox20;
         private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.GroupBox groupBox21;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Button BtnAddNewBillClick;
+        private System.Windows.Forms.DataGridView tblBill;
         private System.Windows.Forms.GroupBox groupBox22;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button25;
@@ -4344,13 +4237,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn41;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn42;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn43;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn44;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn45;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn7;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
@@ -4413,6 +4299,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column41;
         private System.Windows.Forms.DataGridViewButtonColumn tblOrderEdit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.DataGridViewButtonColumn tblCustommerEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn tblCustommerRemove;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn43;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn44;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn45;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
+        private System.Windows.Forms.DataGridViewButtonColumn tblDiscountEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn tblDiscountRemove;
     }
 }
 

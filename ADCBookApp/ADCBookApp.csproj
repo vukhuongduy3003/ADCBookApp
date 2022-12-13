@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEditBillFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditBillFrm.designer.cs">
+      <DependentUpon>AddEditBillFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditCompanyFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,18 @@
     </Compile>
     <Compile Include="AddEditBookFrm.designer.cs">
       <DependentUpon>AddEditBookFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditCustomerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditCustomerFrm.designer.cs">
+      <DependentUpon>AddEditCustomerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditDiscountFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditDiscountFrm.designer.cs">
+      <DependentUpon>AddEditDiscountFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="AddEditExchangeFrm.cs">
       <SubType>Form</SubType>
@@ -84,8 +102,12 @@
       <DependentUpon>AddEditTypeFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Author.cs" />
+    <Compile Include="Bill.cs" />
+    <Compile Include="BillBook.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="Company.cs" />
+    <Compile Include="Custommer.cs" />
+    <Compile Include="Discount.cs" />
     <Compile Include="ExchangeBook.cs" />
     <Compile Include="HomeFrm.cs">
       <SubType>Form</SubType>
@@ -101,6 +123,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Type.cs" />
+    <EmbeddedResource Include="AddEditBillFrm.resx">
+      <DependentUpon>AddEditBillFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditCompanyFrm.resx">
       <DependentUpon>AddEditCompanyFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditBookFrm.resx">
       <DependentUpon>AddEditBookFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditCustomerFrm.resx">
+      <DependentUpon>AddEditCustomerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditDiscountFrm.resx">
+      <DependentUpon>AddEditDiscountFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditExchangeFrm.resx">
       <DependentUpon>AddEditExchangeFrm.cs</DependentUpon>
