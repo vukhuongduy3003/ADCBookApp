@@ -17,8 +17,8 @@ namespace ADCBookApp
 
         Custommer custommer = new Custommer();
         List<Custommer> custommers;
-        Book book = new Book();
-        List<Book> books;
+        List<BookDetal> bookDetals;
+        BookDetal bookDetal;
         public AddEditBillFrm()
         {
             InitializeComponent();
@@ -78,14 +78,33 @@ namespace ADCBookApp
             }
         }
 
-        private void ShowSearchedBook(List<Book> books)
+        private void ShowSearchedListSearchedBillBook(List<BookDetal> listSearchedBillBooks)
         {
             tblSearchedBook.Rows.Clear();
-            foreach (Book i in books)
+            foreach (BookDetal i in listSearchedBillBooks)
             {
                 tblSearchedBook.Rows.Add(new object[]
                 {
-                    i.idBook, i.nameBook, i.number
+                    i.idBook, i.nameBook, i.numberBook
+                });
+            }
+        }
+
+        private void ShowBillBook(List<BookDetal> bookDetals)
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT BillBook.idBook, Book.nameBook, BillBook.numberBillBook FROM BillBook, Bill, Book WHERE BillBook.idBook = Book.idBook AND BillBook.idBill = Bill.idBill";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            tblBillDetail.Rows.Clear();
+            foreach (BookDetal i in bookDetals)
+            {
+                tblBillDetail.Rows.Add(new object[]
+                {
+                    i.idBook, i.nameBook, i.numberBook, i.price, i.priceAfterDiscount
                 });
             }
         }
@@ -95,13 +114,21 @@ namespace ADCBookApp
             connection = new SqlConnection(str);
             connection.Open();
             command = connection.CreateCommand();
-            command.CommandText = "SELECT * FROM Book WHERE nameBook LIKE N'%" + txtSearchBook.Text + "%';";
+            command.CommandText = "SELECT idBook, nameBook, number, price FROM Book WHERE nameBook LIKE N'%" + txtSearchBook.Text + "%';";
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);
-            books = new List<Book>();
-            HomeFrm.ConvertDataTableBook(books, table);
-            if (custommers.Count == 0)
+            bookDetals = new List<BookDetal>();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                BookDetal book = new BookDetal();
+                book.idBook = Convert.ToInt32(table.Rows[i]["idBook"]);
+                book.nameBook = table.Rows[i]["nameBook"].ToString();
+                book.numberBook = Convert.ToInt32(table.Rows[i]["number"]);
+                book.price = Convert.ToInt32(table.Rows[i]["price"]);
+                bookDetals.Add(book);
+            }
+            if (bookDetals.Count == 0)
             {
                 var msg = "Không tìm thấy kết quả nào.";
                 var title = "Kết quả tìm kiếm";
@@ -109,23 +136,23 @@ namespace ADCBookApp
             }
             else
             {
-                ShowSearchedBook(books);
+                ShowSearchedListSearchedBillBook(bookDetals);
             }
         }
 
         private void tblSearchedBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == tblSearchedCustomer.Columns["tblCustomerColSelect"].Index)
+            bookDetal = new BookDetal();
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblSearchedBook.Columns["tblBookColSelect"].Index)
             {
-                book.idBook = Int32.Parse(tblSearchedBook.Rows[tblSearchedBook.CurrentRow.Index].Cells[0].Value.ToString());
-                book.nameBook = tblSearchedBook.Rows[tblSearchedBook.CurrentRow.Index].Cells[1].Value.ToString();
-                book.number = Int32.Parse(tblSearchedBook.Rows[tblSearchedBook.CurrentRow.Index].Cells[3].Value.ToString());
+                bookDetal.idBook = Int32.Parse(tblSearchedBook.Rows[tblSearchedBook.CurrentRow.Index].Cells[0].Value.ToString());
+                bookDetal.nameBook = tblSearchedBook.Rows[tblSearchedBook.CurrentRow.Index].Cells[1].Value.ToString();
             }
         }
 
-        private void btnUpdateSelectedItemClick(object sender, EventArgs e)
+        private void btnUpdateSelectedBillBookClick(object sender, EventArgs e)
         {
-            if (book.idBook != 0)
+            if (bookDetal.idBook != 0)
             {
                 var newValue = (int)numericSelectedQuantity.Value;
                 if (newValue == 0)
@@ -134,7 +161,7 @@ namespace ADCBookApp
                 }
                 else
                 {
-                    if (newValue > book.number)
+                    if (newValue > bookDetal.numberBook)
                     {
                         var title = "Lỗi dữ liệu";
                         var msg = "Số lượng sách cần mua vượt quá số lượng hiện có.";
@@ -142,15 +169,10 @@ namespace ADCBookApp
                     }
                     else
                     {
-                        connection = new SqlConnection(str);
-                        connection.Open();
-                        command = connection.CreateCommand();
-                        command.CommandText = "INSERT INTO Bill VALUES (0, 0, 0, 0, '" + DateTime.Now + "');";
-                        adapter.SelectCommand = command;
-                        table.Clear();
-                        adapter.Fill(table);
-
-
+                        bookDetal.numberBook = newValue;
+                        bookDetals = new List<BookDetal>();
+                        bookDetals.Add(bookDetal);
+                        ShowBillBook(bookDetals);
 
                         var msg = $"Cập nhật vào hoá đơn thành công.";
                         var title = "Cập nhật thành công";
@@ -391,6 +413,8 @@ namespace ADCBookApp
         //    _bill.StaffName = txtStaff.Text;
         //}
 
+
+
         private void BtnCancelClick(object sender, EventArgs e)
         {
             var tilte = "Xác nhận hủy hóa đơn";
@@ -414,7 +438,6 @@ namespace ADCBookApp
                 Dispose();
             }
         }
-
 
     }
 }

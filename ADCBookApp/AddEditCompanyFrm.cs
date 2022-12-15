@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ADCBookApp
@@ -28,7 +21,7 @@ namespace ADCBookApp
             CenterToParent();
         }
 
-        public AddEditCompanyFrm(Company _company=null) : this()
+        public AddEditCompanyFrm(Company _company = null) : this()
         {
             if (_company != null)
             {
@@ -85,9 +78,8 @@ namespace ADCBookApp
                         Dispose();
                     }
                 }
-                else // thêm mới NXB
+                else
                 {
-                    //company = new Company(companyName, address, phoneNumber);
                     connection = new SqlConnection(str);
                     connection.Open();
                     command = connection.CreateCommand();
@@ -109,7 +101,7 @@ namespace ADCBookApp
             var title = "Xác nhận";
             var message = "Bạn có chắc muốn hủy bỏ?";
             var ans = ShowConfirmMessage(title, message);
-            if(ans == DialogResult.Yes)
+            if (ans == DialogResult.Yes)
             {
                 Dispose();
             }

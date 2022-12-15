@@ -71,6 +71,7 @@ CREATE TABLE BillBook (
     REFERENCES Bill (idBill),
 	FOREIGN KEY (idBook)
     REFERENCES Book (idBook),
+	numberBook INT NOT NULL
 );
 
 CREATE TABLE Bill (
@@ -94,3 +95,5 @@ CREATE TABLE [Order] (
 	StatusOrder VARCHAR(100) NOT NULL,
 	BillDate DATETIME
 )
+
+SELECT idBook, nameBook, number, price FROM Book WHERE nameBook LIKE N'duy';

@@ -824,6 +824,13 @@ namespace ADCBookApp
 
         private void BtnAddNewBillClick_Click(object sender, EventArgs e)
         {
+            //connection = new SqlConnection(str);
+            //connection.Open();
+            //command = connection.CreateCommand();
+            ////command.CommandText = "INSERT INTO Bill VALUES (0, " + book.idBook + ", " + newValue + ");";
+            //adapter.SelectCommand = command;
+            //table.Clear();
+            //adapter.Fill(table);
             new AddEditBillFrm().Show();
         }
 

@@ -105,6 +105,7 @@
     <Compile Include="Bill.cs" />
     <Compile Include="BillBook.cs" />
     <Compile Include="Book.cs" />
+    <Compile Include="BookDetal.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Custommer.cs" />
     <Compile Include="Discount.cs" />

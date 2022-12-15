@@ -44,8 +44,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -74,6 +72,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeFrm));
             this.comboStat = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -187,12 +187,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tblCompany = new System.Windows.Forms.DataGridView();
-            this.companyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblCompanyEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tblCompanyRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabAuthor = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -402,6 +396,12 @@
             this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblCompanyEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tblCompanyRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudStat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemTo)).BeginInit();
@@ -1579,56 +1579,6 @@
             this.tblCompany.Size = new System.Drawing.Size(1079, 415);
             this.tblCompany.TabIndex = 0;
             this.tblCompany.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblCompanyCellContentClick);
-            // 
-            // companyId
-            // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.companyId.DefaultCellStyle = dataGridViewCellStyle17;
-            this.companyId.HeaderText = "Mã NXB";
-            this.companyId.MinimumWidth = 6;
-            this.companyId.Name = "companyId";
-            this.companyId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // nameCompany
-            // 
-            this.nameCompany.HeaderText = "Tên NXB";
-            this.nameCompany.MinimumWidth = 6;
-            this.nameCompany.Name = "nameCompany";
-            this.nameCompany.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // address
-            // 
-            this.address.HeaderText = "Địa chỉ";
-            this.address.MinimumWidth = 6;
-            this.address.Name = "address";
-            this.address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // phoneNumber
-            // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.phoneNumber.DefaultCellStyle = dataGridViewCellStyle18;
-            this.phoneNumber.HeaderText = "Số ĐT";
-            this.phoneNumber.MinimumWidth = 6;
-            this.phoneNumber.Name = "phoneNumber";
-            this.phoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // tblCompanyEdit
-            // 
-            this.tblCompanyEdit.HeaderText = "Sửa";
-            this.tblCompanyEdit.MinimumWidth = 6;
-            this.tblCompanyEdit.Name = "tblCompanyEdit";
-            this.tblCompanyEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblCompanyEdit.Text = "Sửa";
-            this.tblCompanyEdit.UseColumnTextForButtonValue = true;
-            // 
-            // tblCompanyRemove
-            // 
-            this.tblCompanyRemove.HeaderText = "Xóa";
-            this.tblCompanyRemove.MinimumWidth = 6;
-            this.tblCompanyRemove.Name = "tblCompanyRemove";
-            this.tblCompanyRemove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblCompanyRemove.Text = "Xóa";
-            this.tblCompanyRemove.UseColumnTextForButtonValue = true;
             // 
             // tabAuthor
             // 
@@ -3888,6 +3838,56 @@
             this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
             this.dataGridViewTextBoxColumn66.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // companyId
+            // 
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.companyId.DefaultCellStyle = dataGridViewCellStyle17;
+            this.companyId.HeaderText = "Mã NXB";
+            this.companyId.MinimumWidth = 6;
+            this.companyId.Name = "companyId";
+            this.companyId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // nameCompany
+            // 
+            this.nameCompany.HeaderText = "Tên NXB";
+            this.nameCompany.MinimumWidth = 6;
+            this.nameCompany.Name = "nameCompany";
+            this.nameCompany.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // address
+            // 
+            this.address.HeaderText = "Địa chỉ";
+            this.address.MinimumWidth = 6;
+            this.address.Name = "address";
+            this.address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // phoneNumber
+            // 
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.phoneNumber.DefaultCellStyle = dataGridViewCellStyle18;
+            this.phoneNumber.HeaderText = "Số ĐT";
+            this.phoneNumber.MinimumWidth = 6;
+            this.phoneNumber.Name = "phoneNumber";
+            this.phoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // tblCompanyEdit
+            // 
+            this.tblCompanyEdit.HeaderText = "Sửa";
+            this.tblCompanyEdit.MinimumWidth = 6;
+            this.tblCompanyEdit.Name = "tblCompanyEdit";
+            this.tblCompanyEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblCompanyEdit.Text = "Sửa";
+            this.tblCompanyEdit.UseColumnTextForButtonValue = true;
+            // 
+            // tblCompanyRemove
+            // 
+            this.tblCompanyRemove.HeaderText = "Xóa";
+            this.tblCompanyRemove.MinimumWidth = 6;
+            this.tblCompanyRemove.Name = "tblCompanyRemove";
+            this.tblCompanyRemove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblCompanyRemove.Text = "Xóa";
+            this.tblCompanyRemove.UseColumnTextForButtonValue = true;
+            // 
             // HomeFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -4148,12 +4148,6 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn companyId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameCompany;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumber;
-        private System.Windows.Forms.DataGridViewButtonColumn tblCompanyEdit;
-        private System.Windows.Forms.DataGridViewButtonColumn tblCompanyRemove;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
@@ -4315,6 +4309,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
         private System.Windows.Forms.DataGridViewButtonColumn tblDiscountEdit;
         private System.Windows.Forms.DataGridViewButtonColumn tblDiscountRemove;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companyId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameCompany;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumber;
+        private System.Windows.Forms.DataGridViewButtonColumn tblCompanyEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn tblCompanyRemove;
     }
 }
 

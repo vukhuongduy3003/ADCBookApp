@@ -4,7 +4,6 @@
     {
         public int idBill { get; set; }
         public int idBook { get; set; }
-        public Bill bill { get; set; }
-        public Book book { get; set; }
+        public int numberBillBook { get; set; }
     }
 }

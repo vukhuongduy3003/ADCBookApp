@@ -52,25 +52,25 @@
             this.numericSelectedQuantity = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.labelTotalAmount = new System.Windows.Forms.Label();
             this.labelTotalDiscount = new System.Windows.Forms.Label();
             this.labelTotalItem = new System.Windows.Forms.Label();
             this.labelCustomerName = new System.Windows.Forms.Label();
             this.tblBillDetail = new System.Windows.Forms.DataGridView();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnPay = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblItemColSelect = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblBookColSelect = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblSearchedCustomer)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -195,7 +195,7 @@
             this.btnUpdateSelectedItem.TabIndex = 7;
             this.btnUpdateSelectedItem.Text = "Cập nhật vào hoá đơn";
             this.btnUpdateSelectedItem.UseVisualStyleBackColor = true;
-            this.btnUpdateSelectedItem.Click += new System.EventHandler(this.btnUpdateSelectedItemClick);
+            this.btnUpdateSelectedItem.Click += new System.EventHandler(this.btnUpdateSelectedBillBookClick);
             // 
             // tblSearchedBook
             // 
@@ -216,7 +216,7 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.tblItemColSelect});
+            this.tblBookColSelect});
             this.tblSearchedBook.Location = new System.Drawing.Point(6, 118);
             this.tblSearchedBook.Name = "tblSearchedBook";
             this.tblSearchedBook.RowHeadersWidth = 51;
@@ -287,6 +287,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết sách trong hóa đơn";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(319, 311);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 20);
+            this.label2.TabIndex = 5;
+            // 
             // labelTotalAmount
             // 
             this.labelTotalAmount.AutoSize = true;
@@ -350,6 +358,36 @@
             this.tblBillDetail.Size = new System.Drawing.Size(1043, 265);
             this.tblBillDetail.TabIndex = 0;
             // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Mã Sách";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Tên Sách";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Số lượng mua";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Giá bán";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Giá sau khi KM";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            // 
             // btnCancel
             // 
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -392,14 +430,6 @@
             this.btnSave.Text = "Chưa thanh toán";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(319, 311);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 20);
-            this.label2.TabIndex = 5;
-            // 
             // Column3
             // 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -425,43 +455,13 @@
             this.Column5.Name = "Column5";
             this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // tblItemColSelect
+            // tblBookColSelect
             // 
-            this.tblItemColSelect.HeaderText = "Chọn";
-            this.tblItemColSelect.MinimumWidth = 6;
-            this.tblItemColSelect.Name = "tblItemColSelect";
-            this.tblItemColSelect.Text = "Chọn";
-            this.tblItemColSelect.UseColumnTextForButtonValue = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Mã Sách";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Tên Sách";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Số lượng mua";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Giá bán";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Giá sau khi KM";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
+            this.tblBookColSelect.HeaderText = "Chọn";
+            this.tblBookColSelect.MinimumWidth = 6;
+            this.tblBookColSelect.Name = "tblBookColSelect";
+            this.tblBookColSelect.Text = "Chọn";
+            this.tblBookColSelect.UseColumnTextForButtonValue = true;
             // 
             // AddEditBillFrm
             // 
@@ -526,14 +526,14 @@
         private System.Windows.Forms.DataGridViewButtonColumn tblCustomerColSelect;
         private System.Windows.Forms.Button btnUpdateSelectedItem;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewButtonColumn tblItemColSelect;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewButtonColumn tblBookColSelect;
     }
 }
