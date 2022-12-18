@@ -732,35 +732,38 @@ namespace ADCBookApp
 
         private void tblOrderCellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var title = "Xác nhận sửa";
-            var msg = "Bạn có chắc chắn muốn sửa bản ghi này không?";
-            var ans = ShowConfirmDialog(msg, title);
-            if (ans == DialogResult.Yes)
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblOrderBill.Columns["tblOrderEdit"].Index)
             {
-                Order order = new Order();
-                order.idOrder = Int32.Parse(tblOrderBill.Rows[tblOrderBill.CurrentRow.Index].Cells[0].Value.ToString());
-                order.StatusOrder = tblOrderBill.Rows[tblOrderBill.CurrentRow.Index].Cells[5].Value.ToString();
-                if (order.StatusOrder != "Chua thanh toan")
+                var title = "Xác nhận sửa";
+                var msg = "Bạn có chắc chắn muốn sửa bản ghi này không?";
+                var ans = ShowConfirmDialog(msg, title);
+                if (ans == DialogResult.Yes)
                 {
-                    connection = new SqlConnection(str);
-                    connection.Open();
-                    command = connection.CreateCommand();
-                    command.CommandText = "UPDATE [Order] SET [Order].StatusOrder = N'" + order.StatusOrder + "', [Order].BillDate = '" + DateTime.Now + "' WHERE [Order].idOrder = " + order.idOrder + "";
-                    adapter.SelectCommand = command;
-                    table.Clear();
-                    adapter.Fill(table);
-                    orders = new List<Order>();
-                    tblOrderBill.Rows.Clear();
-                    ConvertDataTableOrder(orders, table);
-                    foreach (Order i in orders)
+                    Order order = new Order();
+                    order.idOrder = Int32.Parse(tblOrderBill.Rows[tblOrderBill.CurrentRow.Index].Cells[0].Value.ToString());
+                    order.StatusOrder = tblOrderBill.Rows[tblOrderBill.CurrentRow.Index].Cells[5].Value.ToString();
+                    if (order.StatusOrder != "Chua thanh toan")
                     {
-                        tblOrderBill.Rows.Add(new object[]
+                        connection = new SqlConnection(str);
+                        connection.Open();
+                        command = connection.CreateCommand();
+                        command.CommandText = "UPDATE [Order] SET [Order].StatusOrder = N'" + order.StatusOrder + "', [Order].BillDate = '" + DateTime.Now + "' WHERE [Order].idOrder = " + order.idOrder + "";
+                        adapter.SelectCommand = command;
+                        table.Clear();
+                        adapter.Fill(table);
+                        orders = new List<Order>();
+                        tblOrderBill.Rows.Clear();
+                        ConvertDataTableOrder(orders, table);
+                        foreach (Order i in orders)
                         {
+                            tblOrderBill.Rows.Add(new object[]
+                            {
                     i.idOrder, i.nameOrder, i.CreateDateOrder, i.BillTotal, i.BillDate.ToString() == "1/1/0001 12:00:00 AM" ? "-" : i.BillDate.ToString(), i.StatusOrder
-                        });
+                            });
+                        }
+                        ShowOrderBill();
+                        MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    ShowOrderBill();
-                    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
