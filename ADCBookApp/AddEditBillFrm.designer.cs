@@ -31,9 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditBillFrm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tblSearchedCustomer = new System.Windows.Forms.DataGridView();
@@ -46,6 +46,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnUpdateSelectedItem = new System.Windows.Forms.Button();
             this.tblSearchedBook = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblBookColSelect = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSearchItem = new System.Windows.Forms.Button();
             this.txtSearchBook = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,15 +66,9 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblBookColSelect = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnNonPay = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblSearchedCustomer)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -224,6 +222,39 @@
             this.tblSearchedBook.TabIndex = 5;
             this.tblSearchedBook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblSearchedBook_CellContentClick);
             // 
+            // Column3
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.HeaderText = "Mã Sách";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tên Sách";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column5.HeaderText = "Số lượng";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // tblBookColSelect
+            // 
+            this.tblBookColSelect.HeaderText = "Chọn";
+            this.tblBookColSelect.MinimumWidth = 6;
+            this.tblBookColSelect.Name = "tblBookColSelect";
+            this.tblBookColSelect.Text = "Chọn";
+            this.tblBookColSelect.UseColumnTextForButtonValue = true;
+            // 
             // btnSearchItem
             // 
             this.btnSearchItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,8 +381,7 @@
             this.Column7,
             this.Column8,
             this.Column9,
-            this.Column10,
-            this.Column11});
+            this.Column10});
             this.tblBillDetail.Location = new System.Drawing.Point(6, 22);
             this.tblBillDetail.Name = "tblBillDetail";
             this.tblBillDetail.RowHeadersWidth = 51;
@@ -382,27 +412,10 @@
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
             // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Giá sau khi KM";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(766, 661);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(130, 33);
-            this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "Hủy bỏ";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.BtnCancelClick);
-            // 
             // btnRemove
             // 
             this.btnRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemove.Location = new System.Drawing.Point(569, 651);
+            this.btnRemove.Location = new System.Drawing.Point(617, 651);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(117, 50);
             this.btnRemove.TabIndex = 9;
@@ -413,65 +426,33 @@
             // btnPay
             // 
             this.btnPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPay.Location = new System.Drawing.Point(370, 651);
+            this.btnPay.Location = new System.Drawing.Point(264, 651);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(117, 50);
             this.btnPay.TabIndex = 8;
-            this.btnPay.Text = "Đã thanh toán";
+            this.btnPay.Text = "Thanh toán";
             this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
-            // btnSave
+            // btnNonPay
             // 
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(169, 651);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 50);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Chưa thanh toán";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column3.HeaderText = "Mã Sách";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tên Sách";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column5.HeaderText = "Số lượng";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // tblBookColSelect
-            // 
-            this.tblBookColSelect.HeaderText = "Chọn";
-            this.tblBookColSelect.MinimumWidth = 6;
-            this.tblBookColSelect.Name = "tblBookColSelect";
-            this.tblBookColSelect.Text = "Chọn";
-            this.tblBookColSelect.UseColumnTextForButtonValue = true;
+            this.btnNonPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNonPay.Location = new System.Drawing.Point(441, 651);
+            this.btnNonPay.Name = "btnNonPay";
+            this.btnNonPay.Size = new System.Drawing.Size(117, 50);
+            this.btnNonPay.TabIndex = 11;
+            this.btnNonPay.Text = "Chưa thanh toán";
+            this.btnNonPay.UseVisualStyleBackColor = true;
+            this.btnNonPay.Click += new System.EventHandler(this.btnNonPayClick);
             // 
             // AddEditBillFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 706);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnNonPay);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnPay);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -517,23 +498,21 @@
         private System.Windows.Forms.Label labelTotalItem;
         private System.Windows.Forms.Label labelCustomerName;
         private System.Windows.Forms.DataGridView tblBillDetail;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewButtonColumn tblCustomerColSelect;
         private System.Windows.Forms.Button btnUpdateSelectedItem;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewButtonColumn tblBookColSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.Button btnNonPay;
     }
 }

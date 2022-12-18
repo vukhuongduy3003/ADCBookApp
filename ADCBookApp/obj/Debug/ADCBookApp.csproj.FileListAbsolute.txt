@@ -50,3 +50,4 @@ C:\Users\vukhu\Downloads\Nhom4DHTI14A1CL\ADCBookApp\ADCBookApp\obj\Debug\ADCBook
 C:\Users\vukhu\Downloads\Nhom4DHTI14A1CL\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.AddEditCustommerFrm.resources
 C:\Users\vukhu\Downloads\Nhom4DHTI14A1CL\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.AddEditDiscountFrm.resources
 C:\Users\vukhu\Downloads\Nhom4DHTI14A1CL\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.AddEditBillFrm.resources
+C:\Users\vukhu\Downloads\Nhom4DHTI14A1CL\ADCBookApp\ADCBookApp\obj\Debug\ADCBookApp.DetailBill.resources

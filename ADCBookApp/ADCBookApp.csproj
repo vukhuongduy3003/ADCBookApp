@@ -108,6 +108,12 @@
     <Compile Include="BookDetal.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Custommer.cs" />
+    <Compile Include="DetailBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailBill.Designer.cs">
+      <DependentUpon>DetailBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Discount.cs" />
     <Compile Include="ExchangeBook.cs" />
     <Compile Include="HomeFrm.cs">
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditTypeFrm.resx">
       <DependentUpon>AddEditTypeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailBill.resx">
+      <DependentUpon>DetailBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeFrm.resx">
       <DependentUpon>HomeFrm.cs</DependentUpon>

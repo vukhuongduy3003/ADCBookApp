@@ -55,7 +55,7 @@ namespace ADCBookApp
                 connection.Open();
                 command = connection.CreateCommand();
                 command.CommandText = $"INSERT INTO [Order] (nameOrder, BillTotal, CreateDateOrder, StatusOrder)" +
-                    $"VALUES (N'" + OrderName + "', " + OrderBillTotal + ", '" + DateTime.Now + "', N'" + StatusOrder + "');";
+                    $"VALUES (N'" + OrderName + "', " + OrderBillTotal + ", '" + DateTime.Now + "', '" + StatusOrder + "');";
                 command.ExecuteNonQuery();
                 HomeFrm.hform.ShowOrder();
                 this.Close();

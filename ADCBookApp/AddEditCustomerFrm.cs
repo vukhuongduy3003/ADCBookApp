@@ -80,7 +80,7 @@ namespace ADCBookApp
                     connection.Open();
                     command = connection.CreateCommand();
                     command.CommandText = $"INSERT INTO Custommer (nameCustommer, BirstDay, [Address], phoneNumber, Email, CreateAccount)" +
-                        $"VALUES (N'" + custommerName + "', '" + custommerBirstDay + "', N'" + address + "', N'" + phoneNumber + "', N'" + email + "', '" + DateTime.Now.ToString("dd/MM/yyyy") + "');";
+                        $"VALUES (N'" + custommerName + "', '" + custommerBirstDay + "', N'" + address + "', N'" + phoneNumber + "', N'" + email + "', '" + DateTime.Now.ToString("yyyy/MM/dd") + "');";
                     command.ExecuteNonQuery();
                     HomeFrm.hform.ShowCustommer();
                 }

@@ -16,6 +16,16 @@ namespace ADCBookApp
         {
         }
 
+        public Custommer(int idCustommer, string nameCustommer, DateTime birstDay, string address, string phoneNumber, string email)
+        {
+            this.idCustommer = idCustommer;
+            this.nameCustommer = nameCustommer;
+            BirstDay = birstDay;
+            Address = address;
+            this.phoneNumber = phoneNumber;
+            Email = email;
+        }
+
         public Custommer(int idCustommer, string nameCustommer, DateTime birstDay, string address, string phoneNumber, string email, DateTime createAccount)
         {
             this.idCustommer = idCustommer;

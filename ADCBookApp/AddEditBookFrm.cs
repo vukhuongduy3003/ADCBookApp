@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ADCBookApp
@@ -95,8 +89,8 @@ namespace ADCBookApp
                     connection = new SqlConnection(str);
                     connection.Open();
                     command = connection.CreateCommand();
-                    command.CommandText = $"INSERT INTO Book (nameBook, Company_idCompany, Author_idAuthor, Type_idType, number, price)" +
-                        $"VALUES (N'" + bookName + "', '" + comboCompany.SelectedIndex + 1 + "', '" + comboAuthor.SelectedIndex + 1 + "', '" + comboType.SelectedIndex + 1 + "', '" + bookNumber + "', '" + bookPrice + "');";
+                    command.CommandText = $"INSERT INTO Book (nameBook, nameCompany, nameAuthor, nameType, number, price)" +
+                        $" VALUES (N'" + bookName + "', N'" + comboCompany.Text + "', N'" + comboAuthor.Text + "', N'" + comboType.Text + "', " + bookNumber + ", " + bookPrice + ");";
                     command.ExecuteNonQuery();
                     HomeFrm.hform.ShowBook();
                 }
@@ -149,6 +143,6 @@ namespace ADCBookApp
             }
         }
 
-        
+
     }
 }

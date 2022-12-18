@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
 using System.Windows.Forms;
 
 namespace ADCBookApp
@@ -46,7 +45,7 @@ namespace ADCBookApp
         {
             var discountId = int.Parse(txtDiscountId.Text);
             var discountName = txtDiscountName.Text;
-            var discountStartDay = DateTime.Parse(dtPickerStart.Value.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture));
+            var discountStartDay = dtPickerStart.Value;
             var discountEndDay = dtPickerEnd.Value;
             var discountAmount = int.Parse(numericDiscountAmount.Text);
             try
