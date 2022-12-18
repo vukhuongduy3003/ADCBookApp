@@ -1296,17 +1296,6 @@ namespace ADCBookApp
             }
         }
 
-        private void ShowSearchedDiscount(List<Discount> discounts)
-        {
-            foreach (Discount i in discounts)
-            {
-                tblDiscount.Rows.Add(new object[]
-                {
-                    i.idDiscount, i.nameDiscount, i.StartDiscountDate, i.EndDiscountDate, i.DiscountValue
-                });
-            }
-        }
-
         private void BtnSearchCompanyClick(object sender, EventArgs e)
         {
             var key = txtSearchCompany.Text;
@@ -1805,24 +1794,107 @@ namespace ADCBookApp
             }
         }
 
+        private void ShowResultReportRevenue(DateTime keySearched)
+        {
+            int total = 0;
+            connection = new SqlConnection(str);
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT BillBook.idBook, Book.nameBook, SUM(BillBook.numberBook) AS totalNumberBook, Book.price, SUM(Book.price * BillBook.numberBook) AS totalPrice FROM BillBook JOIN Book ON BillBook.idBook = Book.idBook JOIN Bill ON Bill.idBill = BillBook.idBill WHERE MONTH(Bill.CreateDate) = " + keySearched.ToString("MM") + " AND YEAR(Bill.CreateDate) = " + keySearched.ToString("yyyy") + " GROUP BY BillBook.idBook, Book.nameBook, Book.price;";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            dataGridView7.Rows.Clear();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                dataGridView7.Rows.Add(new object[]
+                {
+                        Convert.ToInt32(table.Rows[i]["idBook"]), table.Rows[i]["nameBook"].ToString(), Convert.ToInt32(table.Rows[i]["totalNumberBook"]), Convert.ToInt32(table.Rows[i]["price"]), Convert.ToInt32(table.Rows[i]["totalPrice"])
+                });
+                total += Convert.ToInt32(table.Rows[i]["totalPrice"]);
+            }
+            lbResultReportRevenue.Text = $"Tổng doanh thu theo tháng: {total:0} (Đồng)";
+            connection.Close();
+        }
+
+        private void btnResultReportRevenueClick(object sender, EventArgs e)
+        {
+            DateTime keySearched = dtpkMonth.Value;
+            ShowResultReportRevenue(keySearched);
+        }
+
         private void ReportClick(object sender, EventArgs e)
         {
             if (tabControlReport.SelectedIndex == 0)
             {
-
+                int totalBook = 0;
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT idBook, nameBook, number FROM Book";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                tblBookWarehouse.Rows.Clear();
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    tblBookWarehouse.Rows.Add(new object[]
+                    {
+                        Convert.ToInt32(table.Rows[i]["idBook"]), table.Rows[i]["nameBook"].ToString(), Convert.ToInt32(table.Rows[i]["number"])
+                    });
+                    totalBook += Convert.ToInt32(table.Rows[i]["number"]);
+                }
+                lbShowTotalBook.Text = $"Tổng số sách hiện tại trong kho: {totalBook:0}(Quyển)";
+                connection.Close();
             }
             else if (tabControlReport.SelectedIndex == 1)
             {
-
+                int totalBookPay = 0;
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT BillBook.idBook, Book.nameBook, SUM(BillBook.numberBook) AS totalBuyedBook FROM BillBook JOIN Book ON BillBook.idBook = Book.idBook GROUP BY BillBook.idBook, Book.nameBook ORDER BY SUM(BillBook.numberBook) DESC;";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                tblBuyedBook.Rows.Clear();
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    tblBuyedBook.Rows.Add(new object[]
+                    {
+                        Convert.ToInt32(table.Rows[i]["idBook"]), table.Rows[i]["nameBook"].ToString(), Convert.ToInt32(table.Rows[i]["totalBuyedBook"])
+                    });
+                    totalBookPay += Convert.ToInt32(table.Rows[i]["totalBuyedBook"]);
+                }
+                lbShowBuyedBook.Text = $"Tổng số sách đã bán: {totalBookPay:0}(Quyển)";
+                connection.Close();
             }
             else if (tabControlReport.SelectedIndex == 2)
             {
-
+                DateTime keySearched = dtpkMonth.Value;
+                ShowResultReportRevenue(keySearched);
             }
             else
             {
-
+                connection = new SqlConnection(str);
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT Custommer.idCustommer, Custommer.nameCustommer, SUM(Bill.PayTotal) AS totalPayPrice FROM Custommer JOIN Bill ON Custommer.nameCustommer = Bill.nameCustommer GROUP BY Custommer.idCustommer, Custommer.nameCustommer ORDER BY SUM(Bill.PayTotal) DESC;";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                lbCustommerPotential.Rows.Clear();
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    lbCustommerPotential.Rows.Add(new object[]
+                    {
+                        Convert.ToInt32(table.Rows[i]["idCustommer"]), table.Rows[i]["nameCustommer"].ToString(), Convert.ToInt32(table.Rows[i]["totalPayPrice"])
+                    });
+                }
+                connection.Close();
             }
         }
+
+
     }
 }

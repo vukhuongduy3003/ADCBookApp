@@ -75,6 +75,7 @@
             // 
             // btnAddNewExchangeBook
             // 
+            this.btnAddNewExchangeBook.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewExchangeBook.Image")));
             this.btnAddNewExchangeBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddNewExchangeBook.Location = new System.Drawing.Point(80, 346);
             this.btnAddNewExchangeBook.Name = "btnAddNewExchangeBook";
@@ -132,6 +133,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Location = new System.Drawing.Point(279, 346);
             this.btnCancel.Name = "btnCancel";

@@ -69,6 +69,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Location = new System.Drawing.Point(262, 384);
             this.btnCancel.Name = "btnCancel";
@@ -80,6 +81,7 @@
             // 
             // btnAddNewOrder
             // 
+            this.btnAddNewOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewOrder.Image")));
             this.btnAddNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddNewOrder.Location = new System.Drawing.Point(96, 384);
             this.btnAddNewOrder.Name = "btnAddNewOrder";

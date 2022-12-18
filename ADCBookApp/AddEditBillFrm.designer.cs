@@ -30,11 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditBillFrm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditBillFrm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tblSearchedCustomer = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,6 +143,7 @@
             // 
             // btnSearchCustomer
             // 
+            this.btnSearchCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchCustomer.Image")));
             this.btnSearchCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchCustomer.Location = new System.Drawing.Point(407, 49);
             this.btnSearchCustomer.Name = "btnSearchCustomer";
@@ -186,12 +187,13 @@
             // 
             // btnUpdateSelectedItem
             // 
+            this.btnUpdateSelectedItem.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateSelectedItem.Image")));
             this.btnUpdateSelectedItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdateSelectedItem.Location = new System.Drawing.Point(391, 61);
             this.btnUpdateSelectedItem.Name = "btnUpdateSelectedItem";
             this.btnUpdateSelectedItem.Size = new System.Drawing.Size(124, 54);
             this.btnUpdateSelectedItem.TabIndex = 7;
-            this.btnUpdateSelectedItem.Text = "Cập nhật vào hoá đơn";
+            this.btnUpdateSelectedItem.Text = " Cập nhật vào hoá đơn";
             this.btnUpdateSelectedItem.UseVisualStyleBackColor = true;
             this.btnUpdateSelectedItem.Click += new System.EventHandler(this.btnUpdateSelectedBillBookClick);
             // 
@@ -257,6 +259,7 @@
             // 
             // btnSearchItem
             // 
+            this.btnSearchItem.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchItem.Image")));
             this.btnSearchItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchItem.Location = new System.Drawing.Point(400, 27);
             this.btnSearchItem.Name = "btnSearchItem";
@@ -414,21 +417,23 @@
             // 
             // btnRemove
             // 
+            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
             this.btnRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRemove.Location = new System.Drawing.Point(617, 651);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(117, 50);
+            this.btnRemove.Size = new System.Drawing.Size(133, 50);
             this.btnRemove.TabIndex = 9;
-            this.btnRemove.Text = "Xóa bỏ hoá đơn";
+            this.btnRemove.Text = "   Xóa bỏ hoá đơn";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.BtnRemoveClick);
             // 
             // btnPay
             // 
+            this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
             this.btnPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPay.Location = new System.Drawing.Point(264, 651);
+            this.btnPay.Location = new System.Drawing.Point(224, 651);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(117, 50);
+            this.btnPay.Size = new System.Drawing.Size(157, 50);
             this.btnPay.TabIndex = 8;
             this.btnPay.Text = "Thanh toán";
             this.btnPay.UseVisualStyleBackColor = true;
@@ -436,12 +441,13 @@
             // 
             // btnNonPay
             // 
+            this.btnNonPay.Image = ((System.Drawing.Image)(resources.GetObject("btnNonPay.Image")));
             this.btnNonPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNonPay.Location = new System.Drawing.Point(441, 651);
+            this.btnNonPay.Location = new System.Drawing.Point(432, 651);
             this.btnNonPay.Name = "btnNonPay";
-            this.btnNonPay.Size = new System.Drawing.Size(117, 50);
+            this.btnNonPay.Size = new System.Drawing.Size(126, 50);
             this.btnNonPay.TabIndex = 11;
-            this.btnNonPay.Text = "Chưa thanh toán";
+            this.btnNonPay.Text = "  Chưa thanh toán";
             this.btnNonPay.UseVisualStyleBackColor = true;
             this.btnNonPay.Click += new System.EventHandler(this.btnNonPayClick);
             // 

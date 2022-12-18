@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditTypeFrm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Location = new System.Drawing.Point(262, 384);
             this.btnCancel.Name = "btnCancel";
@@ -67,6 +69,7 @@
             // 
             // btnAddNewType
             // 
+            this.btnAddNewType.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewType.Image")));
             this.btnAddNewType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddNewType.Location = new System.Drawing.Point(96, 384);
             this.btnAddNewType.Name = "btnAddNewType";
@@ -104,6 +107,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

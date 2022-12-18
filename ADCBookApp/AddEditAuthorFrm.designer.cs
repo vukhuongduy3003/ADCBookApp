@@ -70,6 +70,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Location = new System.Drawing.Point(262, 384);
             this.btnCancel.Name = "btnCancel";
@@ -81,6 +82,7 @@
             // 
             // btnAddNewAuthor
             // 
+            this.btnAddNewAuthor.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewAuthor.Image")));
             this.btnAddNewAuthor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddNewAuthor.Location = new System.Drawing.Point(96, 384);
             this.btnAddNewAuthor.Name = "btnAddNewAuthor";
